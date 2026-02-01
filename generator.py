@@ -2,207 +2,337 @@ import requests
 import json
 import os
 import shutil
-from datetime import datetime
+from datetime import datetime, timedelta
+from difflib import SequenceMatcher
 
-# MILLORA 8: Seguretat (Secrets)
-API_URL = os.environ.get("API_URL")
+# --- CONFIGURACIÓ ---
+API_URL_CDN = os.environ.get("API_URL")      # Font 1 (CDN-Live)
+API_URL_PPV = os.environ.get("API_URL_PPV")  # Font 2 (PPV.to)
+
 MEMORY_FILE = "memoria_partits.json"
 BACKUP_FILE = "memoria_backup.json"
 TEMPLATE_FILE = "template.html"
 
+# Mapeig de categories de PPV.to cap a les nostres
+CAT_MAP_PPV = {
+    "Football": "Soccer",
+    "American Football": "NFL",
+    "Basketball": "NBA",
+    "Hockey": "NHL",
+    "Baseball": "MLB",
+    "Motor Sports": "F1",
+    "Fighting": "Boxing",
+    "Tennis": "Tennis"
+}
+
 def get_sport_name(api_key):
     names = {
-        "Soccer": "FOOTBALL ⚽", 
-        "NBA": "BASKETBALL (NBA) 🏀", 
-        "NFL": "NFL 🏈",
-        "NHL": "HOCKEY (NHL) 🏒", 
-        "MLB": "BASEBALL ⚾", 
-        "F1": "FORMULA 1 🏎️",
-        "MotoGP": "MOTOGP 🏍️", 
-        "Tennis": "TENNIS 🎾", 
-        "Boxing": "BOXING 🥊",
-        "Rugby": "RUGBY 🏉"
+        "Soccer": "FUTBOL ⚽", "NBA": "BÀSQUET (NBA) 🏀", "NFL": "NFL 🏈",
+        "NHL": "HOQUEI (NHL) 🏒", "MLB": "BEISBOL ⚾", "F1": "FÓRMULA 1 🏎️",
+        "MotoGP": "MOTOGP 🏍️", "Tennis": "TENNIS 🎾", "Boxing": "BOXA 🥊",
+        "Rugby": "RUGBI 🏉", "Darts": "DARTS 🎯", "Snooker": "SNOOKER 🎱"
     }
     return names.get(api_key, api_key.upper())
 
-# MILLORA 6: Sistema de Backup de Memòria
+# --- UTILITATS DE FUSIÓ ---
+
+def normalize_name(name):
+    """Neteja noms per comparar-los millor"""
+    if not name: return ""
+    # Treiem FC, CF, paraules comunes i passem a minúscules
+    garbage = ["fc", "cf", "ud", "ca", "sc", "basketball", "football"]
+    clean = name.lower()
+    for g in garbage:
+        clean = clean.replace(f" {g} ", " ").replace(f"{g} ", "").replace(f" {g}", "")
+    return clean.strip()
+
+def are_same_match(m1, m2):
+    """
+    Compara dos partits. Retorna True si semblen el mateix.
+    Criteri: Mateixa categoria + Mateixa hora (aprox) + Equips semblants.
+    """
+    # 1. Mateix Esport?
+    if m1.get('custom_sport_cat') != m2.get('custom_sport_cat'):
+        return False
+
+    # 2. Mateixa Hora? (Marge de 45 minuts per si un posa prèvia)
+    try:
+        t1 = datetime.strptime(m1['start'], "%Y-%m-%d %H:%M")
+        t2 = datetime.strptime(m2['start'], "%Y-%m-%d %H:%M")
+        diff_minutes = abs((t1 - t2).total_seconds()) / 60
+        if diff_minutes > 45:
+            return False
+    except:
+        return False # Si fallen les dates, no arrisquem
+
+    # 3. Noms semblants? (Fuzzy Logic)
+    h1 = normalize_name(m1.get('homeTeam'))
+    a1 = normalize_name(m1.get('awayTeam'))
+    h2 = normalize_name(m2.get('homeTeam'))
+    a2 = normalize_name(m2.get('awayTeam'))
+
+    # Comparem text complet "Home vs Away"
+    str1 = f"{h1} {a1}"
+    str2 = f"{h2} {a2}"
+    
+    ratio = SequenceMatcher(None, str1, str2).ratio()
+    
+    # Si s'assemblen més d'un 70%, és el mateix partit
+    return ratio > 0.70
+
+# --- FETCHERS ---
+
+def fetch_cdn_live():
+    """Baixa dades de la Font 1 (CDN-Live)"""
+    print("Fetching CDN-Live...")
+    matches = []
+    if not API_URL_CDN: return matches
+    
+    try:
+        resp = requests.get(API_URL_CDN, headers={"User-Agent": "Mozilla/5.0"}, timeout=15)
+        data = resp.json().get("cdn-live-tv", {})
+        for sport, event_list in data.items():
+            if isinstance(event_list, list):
+                for m in event_list:
+                    m['custom_sport_cat'] = sport
+                    m['provider'] = 'CDN'
+                    matches.append(m)
+    except Exception as e:
+        print(f"Error CDN-Live: {e}")
+    return matches
+
+def fetch_ppv_to():
+    """Baixa dades de la Font 2 (PPV.to) i les adapta al nostre format"""
+    print("Fetching PPV.to...")
+    matches = []
+    if not API_URL_PPV: return matches
+
+    try:
+        resp = requests.get(API_URL_PPV, headers={"User-Agent": "Mozilla/5.0"}, timeout=15)
+        data = resp.json()
+        
+        # Iterem categories
+        for cat_group in data.get('streams', []):
+            cat_name = cat_group.get('category_name', 'Other')
+            # Mapegem el nom (Ex: 'American Football' -> 'NFL')
+            my_cat = CAT_MAP_PPV.get(cat_name)
+            
+            # Només importem els esports que ens interessen (els que tenim al mapa)
+            if not my_cat: continue 
+
+            for s in cat_group.get('streams', []):
+                # 1. Convertir Timestamp a String UTC
+                ts = s.get('starts_at')
+                try:
+                    dt = datetime.utcfromtimestamp(int(ts))
+                    start_str = dt.strftime("%Y-%m-%d %H:%M")
+                    time_str = dt.strftime("%H:%M")
+                except:
+                    continue # Si no té data, fora
+
+                # 2. Extreure equips del nom "Equip A vs. Equip B"
+                full_name = s.get('name', '')
+                teams = full_name.split(' vs. ')
+                if len(teams) < 2: teams = full_name.split(' v ')
+                if len(teams) < 2: teams = full_name.split(' - ')
+                
+                home = teams[0].strip() if len(teams) > 0 else "Unknown"
+                away = teams[1].strip() if len(teams) > 1 else "Unknown"
+
+                # 3. Crear objecte partit compatible
+                match = {
+                    "gameID": str(s.get('id')),
+                    "homeTeam": home,
+                    "awayTeam": away,
+                    "time": time_str,
+                    "start": start_str,
+                    "custom_sport_cat": my_cat,
+                    "status": "upcoming", # PPV no sol dir 'live', assumim upcoming
+                    "provider": "PPV",
+                    "channels": [{
+                        "channel_name": f"{s.get('tag', 'Link')} (HD)",
+                        "channel_code": "ppv", # Codi fictici per icona
+                        "url": s.get('iframe', '#'),
+                        "priority": 5 # Prioritat mitjana
+                    }]
+                }
+                matches.append(match)
+                
+    except Exception as e:
+        print(f"Error PPV.to: {e}")
+    
+    return matches
+
+# --- MAIN LOGIC ---
+
 def load_memory():
-    # Intent 1: Llegir fitxer principal
     if os.path.exists(MEMORY_FILE):
         try:
-            with open(MEMORY_FILE, 'r', encoding='utf-8') as f:
-                return json.load(f)
-        except Exception as e:
-            print(f"Error llegint memòria principal: {e}")
-            # Intent 2: Llegir backup si el principal falla
-            if os.path.exists(BACKUP_FILE):
-                try:
-                    print("Recuperant des del Backup...")
-                    with open(BACKUP_FILE, 'r', encoding='utf-8') as f:
-                        return json.load(f)
-                except:
-                    return {}
+            with open(MEMORY_FILE, 'r', encoding='utf-8') as f: return json.load(f)
+        except: pass
+    if os.path.exists(BACKUP_FILE):
+        try:
+            with open(BACKUP_FILE, 'r', encoding='utf-8') as f: return json.load(f)
+        except: pass
     return {}
 
 def save_memory(data):
-    # Abans de guardar, fem còpia de seguretat del que hi ha ara
     if os.path.exists(MEMORY_FILE):
-        try:
-            shutil.copy(MEMORY_FILE, BACKUP_FILE)
-        except:
-            pass
-    # Guardem el nou
+        try: shutil.copy(MEMORY_FILE, BACKUP_FILE)
+        except: pass
     with open(MEMORY_FILE, 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=4)
 
-def clean_old_events(events_dict):
-    updated_events = {}
-    now = datetime.utcnow()
-
-    for game_id, match in events_dict.items():
-        if match.get('status', '').lower() == 'finished':
-            continue
-
-        sport = match.get('custom_sport_cat', 'Other')
-        # Límits personalitzats per esport
-        limit_hours = 4
-        if sport == 'Soccer': limit_hours = 2.5
-        elif sport == 'NBA': limit_hours = 3.5
-        elif sport == 'F1': limit_hours = 3
-        
-        start_str = match.get('start') 
-        if start_str:
-            try:
-                start_dt = datetime.strptime(start_str, "%Y-%m-%d %H:%M")
-                diff = now - start_dt
-                
-                if diff.total_seconds() > limit_hours * 3600:
-                    continue
-                if diff.total_seconds() < -24 * 3600: # Filtre errors futurs
-                    continue
-            except ValueError:
-                pass 
-        
-        updated_events[game_id] = match
-    return updated_events
-
 def main():
     try:
-        print("1. Loading memory...")
         memory = load_memory()
         
-        print("2. Fetching API data...")
-        if not API_URL:
-            print("ERROR: Falta el secret API_URL")
-            return
-
-        headers = {"User-Agent": "Mozilla/5.0"}
-        try:
-            response = requests.get(API_URL, headers=headers, timeout=15)
-            data_api = response.json()
-            all_sports_api = data_api.get("cdn-live-tv", {})
-        except Exception as e:
-            print(f"API Error: {e}. Using memory.")
-            all_sports_api = {}
-
-        # 3. MERGE
-        for sport, event_list in all_sports_api.items():
-            if not isinstance(event_list, list): continue
-            for match in event_list:
-                game_id = match.get('gameID')
-                if game_id:
-                    if match.get('status', '').lower() == 'finished':
-                        if game_id in memory: del memory[game_id]
-                        continue
-                    match['custom_sport_cat'] = sport 
-                    memory[game_id] = match
-
-        # 4. CLEAN & SAVE
-        clean_memory = clean_old_events(memory)
-        save_memory(clean_memory)
+        # 1. Baixar TOTES les dades
+        list_cdn = fetch_cdn_live()
+        list_ppv = fetch_ppv_to()
         
-        # 5. GENERATE HTML
-        events_by_cat = {}
-        for game_id, match in clean_memory.items():
-            cat = match.get('custom_sport_cat', 'Other')
-            if cat not in events_by_cat: events_by_cat[cat] = []
-            events_by_cat[cat].append(match)
-
-        for cat in events_by_cat:
-            events_by_cat[cat].sort(key=lambda x: x.get('start', '0000-00-00 00:00')) # Ordenem per data real UTC
-
-        active_sports = list(events_by_cat.keys())
+        # 2. Fusionar PPV dins de CDN (Estratègia: CDN és la base, PPV enriqueix)
+        # Primer, convertim la llista CDN en un diccionari temporal per treballar
+        merged_pool = list_cdn # Comencem amb CDN
         
-        # Generar Navbar HTML
-        navbar_html = ""
-        if not active_sports:
-            navbar_html = '<span style="color:#666;">OFFLINE</span>'
-        else:
-            for sport in active_sports:
-                nice_name = get_sport_name(sport)
-                navbar_html += f'<a href="#{sport}" class="nav-btn">{nice_name}</a>'
-
-        # Generar Cards HTML
-        content_html = ""
-        if not active_sports:
-            content_html = """
-            <div style="text-align:center; margin-top:15vh;">
-                <div style="font-size:3em;">😴</div>
-                <h3 style="color:#888;">No live events</h3>
-            </div>"""
-
-        for sport in active_sports:
-            match_list = events_by_cat[sport]
-            nice_name = get_sport_name(sport)
+        print(f"Fusionant: {len(list_cdn)} partits CDN + {len(list_ppv)} partits PPV...")
+        
+        for ppv_match in list_ppv:
+            found = False
+            # Busquem si aquest partit ja existeix a la llista de CDN
+            for existing in merged_pool:
+                if are_same_match(existing, ppv_match):
+                    # BINGO! És el mateix partit.
+                    # Afegim el canal de PPV a la llista de canals existent
+                    existing['channels'].extend(ppv_match['channels'])
+                    found = True
+                    break
             
-            content_html += f'<div id="{sport}" class="sport-section"><div class="sport-title">{nice_name}</div><div class="grid">'
+            # Si no l'hem trobat a CDN, l'afegim com a partit nou
+            if not found:
+                merged_pool.append(ppv_match)
 
-            for match in match_list:
-                home = match.get('homeTeam', 'Home')
-                away = match.get('awayTeam', 'Away')
+        # 3. Actualitzar Memòria (Persistent)
+        current_ids = set()
+        for m in merged_pool:
+            # Generar ID consistent si no en té (per als de PPV nous)
+            if 'gameID' not in m or m['provider'] == 'PPV':
+                # ID basat en dades per evitar duplicats futurs
+                slug = f"{m['custom_sport_cat']}{m['homeTeam']}{m['awayTeam']}{m['start']}"
+                m['gameID'] = str(abs(hash(slug)))
+            
+            gid = m['gameID']
+            
+            # Filtre 'Finished'
+            if m.get('status', '').lower() == 'finished':
+                if gid in memory: del memory[gid]
+                continue
                 
-                # MILLORA 3: Passem la data 'start' directament (UTC) perquè la processi el JS
-                utc_start = match.get('start', '') # Ex: "2026-02-01 20:30"
+            memory[gid] = m
+            current_ids.add(gid)
+
+        # 4. Neteja per temps (Smart Cleaning)
+        final_memory = {}
+        now = datetime.utcnow()
+        for gid, m in memory.items():
+            sport = m.get('custom_sport_cat', 'Other')
+            limit = 3.5 if sport == 'NBA' else 2.5 # Hores de vida
+            
+            try:
+                start_dt = datetime.strptime(m.get('start'), "%Y-%m-%d %H:%M")
+                diff = (now - start_dt).total_seconds()
+                if diff > limit * 3600: continue # Massa vell
+                if diff < -24 * 3600: continue # Futur error
+            except: pass
+            
+            final_memory[gid] = m
+
+        save_memory(final_memory)
+
+        # 5. Generar HTML
+        # Agrupar per esport
+        events_by_cat = {}
+        for m in final_memory.values():
+            cat = m.get('custom_sport_cat', 'Other')
+            if cat not in events_by_cat: events_by_cat[cat] = []
+            
+            # Ordenar canals: Primer Espanyol, després PPV (HD), després la resta
+            def channel_score(ch):
+                code = ch.get('channel_code', '').lower()
+                name = ch.get('channel_name', '').lower()
+                if code in ['es', 'mx', 'ar']: return 10
+                if 'ppv' in code: return 5 # PPV té prioritat mitjana
+                return 1
+            
+            m['channels'].sort(key=channel_score, reverse=True)
+            events_by_cat[cat].append(m)
+
+        # Ordenar Categories i Partits
+        active_sports = sorted(list(events_by_cat.keys()))
+        
+        # HTML Rendering
+        navbar = ""
+        content = ""
+        
+        if not active_sports:
+            content = "<div style='text-align:center; margin-top:50px;'>😴 No events</div>"
+        
+        for sport in active_sports:
+            nice_name = get_sport_name(sport)
+            navbar += f'<a href="#{sport}" class="nav-btn">{nice_name}</a>'
+            
+            # Sort matches by time
+            matches = sorted(events_by_cat[sport], key=lambda x: x.get('start'))
+            
+            content += f'<div id="{sport}" class="sport-section"><div class="sport-title">{nice_name}</div><div class="grid">'
+            
+            for m in matches:
+                utc = m.get('start', '')
+                is_live = m.get('status', '').lower() == 'live'
+                # Si té canal PPV, posem badge HD
+                has_hd = any('ppv' in ch['channel_code'] for ch in m['channels'])
                 
-                is_live = match.get('status', '').lower() == 'live'
-                live_html = '<span class="live-badge">LIVE</span>' if is_live else ''
-                
-                content_html += f"""
+                badges = ""
+                if is_live: badges += '<span class="live-badge">LIVE</span> '
+                if has_hd: badges += '<span class="live-badge" style="background:#007aff;">HD</span>'
+
+                content += f"""
                 <div class="card">
                     <div class="header">
-                        <span class="time" data-utc="{utc_start}">--:--</span>{live_html}
-                        <span class="teams">{home} vs {away}</span>
+                        <span class="time" data-utc="{utc}">--:--</span>
+                        {badges}
+                        <span class="teams">{m['homeTeam']} vs {m['awayTeam']}</span>
                     </div>
-                    <div class="channels">
+                    <div class=\"channels\">
                 """
                 
-                for channel in match.get('channels', []):
-                    name = channel.get('channel_name', 'Channel')
-                    url = channel.get('url', '#')
-                    code = channel.get('channel_code', 'xx').lower()
-                    flag = f"https://flagcdn.com/24x18/{code}.png"
+                for ch in m['channels']:
+                    name = ch.get('channel_name', 'Link')
+                    url = ch.get('url')
+                    code = ch.get('channel_code', 'xx').lower()
                     
-                    content_html += f"""<a href="{url}" class="btn"><img src="{flag}" class="flag-img" onerror="this.style.display='none'"> {name}</a>"""
-                
-                content_html += "</div></div>"
-            content_html += '</div></div>'
+                    # Icona especial per PPV
+                    if code == 'ppv':
+                        img = "https://fav.farm/📺" # Icona TV generica
+                    else:
+                        img = f"https://flagcdn.com/24x18/{code}.png"
 
-        # 6. INJECTAR A LA PLANTILLA
+                    content += f"""<a href="{url}" class="btn"><img src="{img}" class="flag-img" onerror="this.style.display='none'"> {name}</a>"""
+                
+                content += "</div></div>"
+            content += "</div></div>"
+
+        # Injectar
         if os.path.exists(TEMPLATE_FILE):
-            with open(TEMPLATE_FILE, 'r', encoding='utf-8') as f:
-                template = f.read()
-            
-            final_html = template.replace('', navbar_html)
-            final_html = final_html.replace('', content_html)
-            
-            with open("index.html", "w", encoding="utf-8") as f:
-                f.write(final_html)
-            print("SUCCESS: index.html updated from template.")
+            with open(TEMPLATE_FILE, 'r', encoding='utf-8') as f: template = f.read()
+            html = template.replace('', navbar).replace('', content)
+            with open("index.html", "w", encoding="utf-8") as f: f.write(html)
+            print("Web Generated (Merged CDN + PPV)!")
         else:
-            print("ERROR: template.html not found.")
+            print("Template not found!")
 
     except Exception as e:
-        print(f"Error Global: {e}")
+        print(f"Critical Error: {e}")
 
 if __name__ == "__main__":
     main()

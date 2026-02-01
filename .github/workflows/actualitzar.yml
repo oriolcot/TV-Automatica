@@ -37,6 +37,7 @@ jobs:
       - name: Executar el generador
         env: 
           API_URL: ${{ secrets.API_URL }}
+          API_URL_PPV: ${{ secrets.API_URL_PPV }}  # <--- NOVA LÍNIA
         run: python generator.py
 
       - name: Guardar i publicar
