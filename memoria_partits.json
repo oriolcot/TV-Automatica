@@ -620,7 +620,7 @@
         "tournament": "Ligue 1",
         "country": "France",
         "countryIMG": "https://flagcdn.com/w40/fr.png",
-        "status": "upcoming",
+        "status": "live",
         "start": "2026-02-01 19:45",
         "end": "2026-02-01 22:24",
         "channels": [
@@ -742,7 +742,7 @@
         "tournament": "Serie A",
         "country": "Italy",
         "countryIMG": "https://flagcdn.com/w40/it.png",
-        "status": "upcoming",
+        "status": "live",
         "start": "2026-02-01 19:45",
         "end": "2026-02-01 22:24",
         "channels": [
