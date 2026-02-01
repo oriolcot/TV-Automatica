@@ -16,6 +16,7 @@ def main():
         matches = data.get("cdn-live-tv", {}).get("Soccer", [])
         
         # ESTRUCTURA HTML AMB ESTILS PER A IMATGES
+        # Nota: Fem servir triple cometa per a strings de varies línies
         html_content = """
         <!DOCTYPE html>
         <html>
@@ -35,7 +36,6 @@ def main():
                     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
                 }
 
-                /* Capçalera del partit amb els escuts */
                 .match-header {
                     display: flex;
                     align-items: center;
@@ -50,7 +50,6 @@ def main():
                 .vs-text { font-size: 1.2em; font-weight: bold; color: #888; }
                 .match-info { text-align: center; color: #aaa; margin-bottom: 5px; font-size: 0.9em; }
 
-                /* Graella de canals */
                 .channels-grid {
                     display: grid;
                     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -89,7 +88,7 @@ def main():
             home_img = match.get('homeTeamIMG', '')
             away_img = match.get('awayTeamIMG', '')
             
-            # Creem la targeta del partit amb els logos
+            # Afegeix el bloc HTML del partit
             html_content += f"""
             <div class="match-card">
                 <div class="match-info">⏱ {time}</div>
@@ -109,4 +108,30 @@ def main():
             for channel in match.get('channels', []):
                 name = channel.get('channel_name', 'Canal')
                 url = channel.get('url', '#')
-                # Recuperem
+                # Recuperem el logo del canal (sovint són .svg)
+                chan_img = channel.get('image', '')
+                
+                html_content += f"""
+                <a href="{url}" class="btn">
+                    <img src="{chan_img}" class="channel-logo" onerror="this.style.display='none'">
+                    <span class="channel-name">{name}</span>
+                </a>
+                """
+            
+            html_content += """
+                </div>
+            </div>
+            """
+
+        html_content += "</body></html>"
+
+        with open("index.html", "w", encoding="utf-8") as f:
+            f.write(html_content)
+            
+        print(f"Web generada amb imatges correctament.")
+
+    except Exception as e:
+        print(f"Error: {e}")
+
+if __name__ == "__main__":
+    main()
