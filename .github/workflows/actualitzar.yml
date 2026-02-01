@@ -2,12 +2,19 @@ name: Actualitzar Llista TV
 
 on:
   schedule:
-    # 02:00 a 09:00 (UTC+1) -> cada 2 hores
+    # Nit (UTC+1 hivern): 02:00 - 08:00 cada 2h
     - cron: '0 1,3,5,7 * * *'
-    # 09:00 a 00:30 (UTC+1) -> cada 30 minuts
+    # Dia (UTC+1 hivern): 09:00 - 01:30 cada 30 min
     - cron: '*/30 9-23,0 * * *'
 
   workflow_dispatch:
+
+# MILLORA 2: CONCURRÈNCIA
+# Això evita que si un procés va lent, el següent arrenqui i trenqui el Git.
+# 'cancel-in-progress: false' assegura que s'acabi la feina actual abans de fer la nova.
+concurrency:
+  group: production
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -17,7 +24,7 @@ jobs:
       - name: Baixar el codi
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0 # Important per poder fer --amend
+          fetch-depth: 0
 
       - name: Instal·lar Python
         uses: actions/setup-python@v4
@@ -29,16 +36,13 @@ jobs:
 
       - name: Executar el generador
         env: 
-          # MILLORA 8: Aquí injectem el secret
           API_URL: ${{ secrets.API_URL }}
         run: python generator.py
 
-      - name: Guardar i publicar (Clean History)
-        # MILLORA 7: Evitar el 'Git Bloat' amb --amend i force push
+      - name: Guardar i publicar
         run: |
           git config --global user.name "Bot Actualitzador"
           git config --global user.email "bot@github.com"
           git add .
-          # Si ja hi ha un commit previ del bot, el sobreescrivim. Si no, en fem un de nou.
           git commit --amend --no-edit || git commit -m "Actualització automàtica"
           git push --force origin main
