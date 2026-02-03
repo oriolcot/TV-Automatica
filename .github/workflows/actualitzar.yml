@@ -2,16 +2,13 @@ name: Actualitzar Llista TV
 
 on:
   schedule:
-    # Nit (UTC+1 hivern): 02:00 - 08:00 cada 2h
+    # 02:00 a 09:00 (UTC+1) -> cada 2 hores
     - cron: '0 1,3,5,7 * * *'
-    # Dia (UTC+1 hivern): 09:00 - 01:30 cada 30 min
+    # 09:00 a 00:30 (UTC+1) -> cada 30 minuts
     - cron: '*/30 9-23,0 * * *'
 
   workflow_dispatch:
 
-# MILLORA 2: CONCURRÈNCIA
-# Això evita que si un procés va lent, el següent arrenqui i trenqui el Git.
-# 'cancel-in-progress: false' assegura que s'acabi la feina actual abans de fer la nova.
 concurrency:
   group: production
   cancel-in-progress: false
@@ -37,13 +34,14 @@ jobs:
       - name: Executar el generador
         env: 
           API_URL: ${{ secrets.API_URL }}
-          API_URL_PPV: ${{ secrets.API_URL_PPV }}  # <--- NOVA LÍNIA
+          API_URL_PPV: ${{ secrets.API_URL_PPV }}
         run: python generator.py
 
       - name: Guardar i publicar
+        # HEM TRET EL --AMEND PERQUÈ ES NETEGI EL NOM DEL COMMIT
         run: |
           git config --global user.name "Bot Actualitzador"
           git config --global user.email "bot@github.com"
           git add .
-          git commit --amend --no-edit || git commit -m "Actualització automàtica"
-          git push --force origin main
+          git commit -m "Actualització automàtica" || exit 0
+          git push
