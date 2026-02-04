@@ -1,21 +1,4 @@
 {
-    "EGHZAjyT": {
-        "gameID": "EGHZAjyT",
-        "homeTeam": "Fatih Karag\u00fcmr\u00fck",
-        "awayTeam": "\u0130stanbul Ba\u015fak\u015fehir",
-        "homeTeamIMG": "https://api.cdn-live.tv/api/v1/team/images/4954.png",
-        "awayTeamIMG": "https://api.cdn-live.tv/api/v1/team/logo.png",
-        "time": "12:30",
-        "tournament": "Turkish Cup",
-        "country": "Turkey",
-        "countryIMG": "https://flagcdn.com/w40/tr.png",
-        "status": "live",
-        "start": "2026-02-04 12:30",
-        "end": "2026-02-04 15:09",
-        "channels": [],
-        "custom_sport_cat": "Soccer",
-        "provider": "CDN"
-    },
     "WA1UKtyR": {
         "gameID": "WA1UKtyR",
         "homeTeam": "Metaloglobus",
@@ -65,7 +48,7 @@
         "tournament": "Greek Cup",
         "country": "Greece",
         "countryIMG": "https://flagcdn.com/w40/gr.png",
-        "status": "upcoming",
+        "status": "live",
         "start": "2026-02-04 15:00",
         "end": "2026-02-04 17:39",
         "channels": [
@@ -97,7 +80,7 @@
         "tournament": "Turkish Cup",
         "country": "Turkey",
         "countryIMG": "https://flagcdn.com/w40/tr.png",
-        "status": "upcoming",
+        "status": "live",
         "start": "2026-02-04 15:00",
         "end": "2026-02-04 17:39",
         "channels": [],
