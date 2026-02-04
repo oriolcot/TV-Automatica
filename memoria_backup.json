@@ -1,29 +1,4 @@
 {
-    "ztR1qywm": {
-        "gameID": "ztR1qywm",
-        "homeTeam": "Banfield",
-        "awayTeam": "Estudiantes R\u00edo Cuarto",
-        "homeTeamIMG": "https://api.cdn-live.tv/api/v1/team/images/3219.png",
-        "awayTeamIMG": "https://api.cdn-live.tv/api/v1/team/logo.png",
-        "time": "22:00",
-        "tournament": "Primera Divisi\u00f3n",
-        "country": "Argentina",
-        "countryIMG": "https://flagcdn.com/w40/ar.png",
-        "status": "live",
-        "start": "2026-02-03 22:00",
-        "end": "2026-02-04 00:39",
-        "channels": [
-            {
-                "channel_name": "TNT Sports",
-                "channel_code": "ar",
-                "url": "https://cdn-live.tv/api/v1/channels/player/?name=tnt+sports&code=ar&user=cdnlivetv&plan=free",
-                "image": "https://api.cdn-live.tv/api/v1/channels/images6318/argentina/tnt-sports.png",
-                "viewers": 0
-            }
-        ],
-        "custom_sport_cat": "Soccer",
-        "provider": "CDN"
-    },
     "HsRn7YC0": {
         "gameID": "HsRn7YC0",
         "homeTeam": "Instituto",
@@ -34,7 +9,7 @@
         "tournament": "Primera Divisi\u00f3n",
         "country": "Argentina",
         "countryIMG": "https://flagcdn.com/w40/ar.png",
-        "status": "upcoming",
+        "status": "live",
         "start": "2026-02-04 00:15",
         "end": "2026-02-04 02:54",
         "channels": [
@@ -59,7 +34,7 @@
         "tournament": "Primera Divisi\u00f3n",
         "country": "Argentina",
         "countryIMG": "https://flagcdn.com/w40/ar.png",
-        "status": "upcoming",
+        "status": "live",
         "start": "2026-02-04 00:15",
         "end": "2026-02-04 02:54",
         "channels": [
@@ -91,7 +66,7 @@
         "tournament": "Copa Libertadores",
         "country": "South America",
         "countryIMG": "https://i.ibb.co/V0wcngL7/world-b7d16db.png",
-        "status": "upcoming",
+        "status": "live",
         "start": "2026-02-04 00:30",
         "end": "2026-02-04 03:09",
         "channels": [
@@ -144,7 +119,7 @@
         "tournament": "NBA",
         "country": "United States",
         "countryIMG": "https://flagcdn.com/w40/us.png",
-        "status": "upcoming",
+        "status": "live",
         "start": "2026-02-04 00:00",
         "end": "2026-02-04 02:40",
         "channels": [
@@ -176,7 +151,7 @@
         "tournament": "NBA",
         "country": "United States",
         "countryIMG": "https://flagcdn.com/w40/us.png",
-        "status": "upcoming",
+        "status": "live",
         "start": "2026-02-04 00:00",
         "end": "2026-02-04 02:40",
         "channels": [
@@ -201,7 +176,7 @@
         "tournament": "NBA",
         "country": "United States",
         "countryIMG": "https://flagcdn.com/w40/us.png",
-        "status": "upcoming",
+        "status": "live",
         "start": "2026-02-04 00:00",
         "end": "2026-02-04 02:40",
         "channels": [
@@ -233,7 +208,7 @@
         "tournament": "NBA",
         "country": "United States",
         "countryIMG": "https://flagcdn.com/w40/us.png",
-        "status": "upcoming",
+        "status": "live",
         "start": "2026-02-04 00:30",
         "end": "2026-02-04 03:10",
         "channels": [
@@ -279,7 +254,7 @@
         "tournament": "NBA",
         "country": "United States",
         "countryIMG": "https://flagcdn.com/w40/us.png",
-        "status": "upcoming",
+        "status": "live",
         "start": "2026-02-04 00:30",
         "end": "2026-02-04 03:10",
         "channels": [
@@ -304,7 +279,7 @@
         "tournament": "NBA",
         "country": "United States",
         "countryIMG": "https://flagcdn.com/w40/us.png",
-        "status": "upcoming",
+        "status": "live",
         "start": "2026-02-04 01:00",
         "end": "2026-02-04 03:40",
         "channels": [
@@ -392,7 +367,7 @@
         "tournament": "NBA",
         "country": "United States",
         "countryIMG": "https://flagcdn.com/w40/us.png",
-        "status": "upcoming",
+        "status": "live",
         "start": "2026-02-04 01:00",
         "end": "2026-02-04 03:40",
         "channels": [
@@ -417,7 +392,7 @@
         "tournament": "NBA",
         "country": "United States",
         "countryIMG": "https://flagcdn.com/w40/us.png",
-        "status": "upcoming",
+        "status": "live",
         "start": "2026-02-04 01:00",
         "end": "2026-02-04 03:40",
         "channels": [
@@ -559,130 +534,6 @@
         "custom_sport_cat": "NBA",
         "provider": "CDN"
     },
-    "VtNihj6a": {
-        "gameID": "VtNihj6a",
-        "homeTeam": "Ottawa Senators",
-        "awayTeam": "Carolina Hurricanes",
-        "homeTeamIMG": "https://api.cdn-live.tv/api/v1/team/images/3700.png",
-        "awayTeamIMG": "https://api.cdn-live.tv/api/v1/team/images/3680.png",
-        "time": "00:00",
-        "tournament": "NHL",
-        "country": "United States",
-        "countryIMG": "https://flagcdn.com/w40/us.png",
-        "status": "upcoming",
-        "start": "2026-02-04 00:00",
-        "end": "2026-02-04 02:45",
-        "channels": [
-            {
-                "channel_name": "NHL League Pass 1",
-                "channel_code": "us",
-                "url": "https://cdn-live.tv/api/v1/channels/player/?name=nhl+league+pass+1&code=us&user=cdnlivetv&plan=free",
-                "image": "https://api.cdn-live.tv/api/v1/channels/images6318/united-states/nhl-league-pass.png",
-                "viewers": 0
-            },
-            {
-                "channel_name": "TSN 5",
-                "channel_code": "ca",
-                "url": "https://cdn-live.tv/api/v1/channels/player/?name=tsn+5&code=ca&user=cdnlivetv&plan=free",
-                "image": "https://api.cdn-live.tv/api/v1/channels/images6318/canada/tsn-5.svg",
-                "viewers": 0
-            }
-        ],
-        "custom_sport_cat": "NHL",
-        "provider": "CDN"
-    },
-    "nU3Hhltm": {
-        "gameID": "nU3Hhltm",
-        "homeTeam": "Washington Capitals",
-        "awayTeam": "Philadelphia Flyers",
-        "homeTeamIMG": "https://api.cdn-live.tv/api/v1/team/images/3691.png",
-        "awayTeamIMG": "https://api.cdn-live.tv/api/v1/team/images/3699.png",
-        "time": "00:00",
-        "tournament": "NHL",
-        "country": "United States",
-        "countryIMG": "https://flagcdn.com/w40/us.png",
-        "status": "upcoming",
-        "start": "2026-02-04 00:00",
-        "end": "2026-02-04 02:45",
-        "channels": [
-            {
-                "channel_name": "NHL League Pass 2",
-                "channel_code": "us",
-                "url": "https://cdn-live.tv/api/v1/channels/player/?name=nhl+league+pass+2&code=us&user=cdnlivetv&plan=free",
-                "image": "https://api.cdn-live.tv/api/v1/channels/images6318/united-states/nhl-league-pass.png",
-                "viewers": 0
-            },
-            {
-                "channel_name": "Viaplay Sports 2",
-                "channel_code": "gb",
-                "url": "https://cdn-live.tv/api/v1/channels/player/?name=viaplay+sports+2&code=gb&user=cdnlivetv&plan=free",
-                "image": "https://api.cdn-live.tv/api/v1/channels/images6318/united-kingdom/viaplay-sports-2.png",
-                "viewers": 0
-            },
-            {
-                "channel_name": "TVP Sport",
-                "channel_code": "pl",
-                "url": "https://cdn-live.tv/api/v1/channels/player/?name=tvp+sport&code=pl&user=cdnlivetv&plan=free",
-                "image": "https://api.cdn-live.tv/api/v1/channels/images6318/poland/tvp-sport.svg",
-                "viewers": 0
-            },
-            {
-                "channel_name": "Arena 3 Premium",
-                "channel_code": "rs",
-                "url": "https://cdn-live.tv/api/v1/channels/player/?name=arena+3+premium&code=rs&user=cdnlivetv&plan=free",
-                "image": "https://api.cdn-live.tv/api/v1/channels/images6318/serbia/arena-sport-premium-3.webp",
-                "viewers": 0
-            },
-            {
-                "channel_name": "Sport 5 Stars",
-                "channel_code": "il",
-                "url": "https://cdn-live.tv/api/v1/channels/player/?name=sport+5+stars&code=il&user=cdnlivetv&plan=free",
-                "image": "https://api.cdn-live.tv/api/v1/channels/images6318/israel/sport-5-stars.png",
-                "viewers": 0
-            }
-        ],
-        "custom_sport_cat": "NHL",
-        "provider": "CDN"
-    },
-    "4NGMCfta": {
-        "gameID": "4NGMCfta",
-        "homeTeam": "Columbus Blue Jackets",
-        "awayTeam": "New Jersey Devils",
-        "homeTeamIMG": "https://api.cdn-live.tv/api/v1/team/images/3683.png",
-        "awayTeamIMG": "https://api.cdn-live.tv/api/v1/team/images/3704.png",
-        "time": "00:00",
-        "tournament": "NHL",
-        "country": "United States",
-        "countryIMG": "https://flagcdn.com/w40/us.png",
-        "status": "upcoming",
-        "start": "2026-02-04 00:00",
-        "end": "2026-02-04 02:45",
-        "channels": [
-            {
-                "channel_name": "NHL League Pass 3",
-                "channel_code": "us",
-                "url": "https://cdn-live.tv/api/v1/channels/player/?name=nhl+league+pass+3&code=us&user=cdnlivetv&plan=free",
-                "image": "https://api.cdn-live.tv/api/v1/channels/images6318/united-states/nhl-league-pass.png",
-                "viewers": 0
-            },
-            {
-                "channel_name": "MSG",
-                "channel_code": "us",
-                "url": "https://cdn-live.tv/api/v1/channels/player/?name=msg&code=us&user=cdnlivetv&plan=free",
-                "image": "https://api.cdn-live.tv/api/v1/channels/images6318/united-states/msg.png",
-                "viewers": 0
-            },
-            {
-                "channel_name": "TV3 Sport",
-                "channel_code": "dk",
-                "url": "https://cdn-live.tv/api/v1/channels/player/?name=tv3+sport&code=dk&user=cdnlivetv&plan=free",
-                "image": "https://api.cdn-live.tv/api/v1/channels/images6318/denmark/tv3-sport.webp",
-                "viewers": 0
-            }
-        ],
-        "custom_sport_cat": "NHL",
-        "provider": "CDN"
-    },
     "vJxXy43Z": {
         "gameID": "vJxXy43Z",
         "homeTeam": "Pittsburgh Penguins",
@@ -693,7 +544,7 @@
         "tournament": "NHL",
         "country": "United States",
         "countryIMG": "https://flagcdn.com/w40/us.png",
-        "status": "upcoming",
+        "status": "live",
         "start": "2026-02-04 00:30",
         "end": "2026-02-04 03:15",
         "channels": [
@@ -725,7 +576,7 @@
         "tournament": "NHL",
         "country": "United States",
         "countryIMG": "https://flagcdn.com/w40/us.png",
-        "status": "upcoming",
+        "status": "live",
         "start": "2026-02-04 00:30",
         "end": "2026-02-04 03:15",
         "channels": [
@@ -750,7 +601,7 @@
         "tournament": "NHL",
         "country": "United States",
         "countryIMG": "https://flagcdn.com/w40/us.png",
-        "status": "upcoming",
+        "status": "live",
         "start": "2026-02-04 01:30",
         "end": "2026-02-04 04:15",
         "channels": [
@@ -863,7 +714,7 @@
         "tournament": "NFL",
         "country": "United States",
         "countryIMG": "https://flagcdn.com/w40/us.png",
-        "status": "upcoming",
+        "status": "live",
         "start": "2026-02-04 01:00",
         "end": "2026-02-04 04:15",
         "channels": [
