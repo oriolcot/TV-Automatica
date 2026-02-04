@@ -1,43 +1,4 @@
 {
-    "WA1UKtyR": {
-        "gameID": "WA1UKtyR",
-        "homeTeam": "Metaloglobus",
-        "awayTeam": "Csikszereda",
-        "homeTeamIMG": "https://api.cdn-live.tv/api/v1/team/logo.png",
-        "awayTeamIMG": "https://api.cdn-live.tv/api/v1/team/images/283972.png",
-        "time": "14:00",
-        "tournament": "Liga I",
-        "country": "Romania",
-        "countryIMG": "https://flagcdn.com/w40/ro.png",
-        "status": "live",
-        "start": "2026-02-04 14:00",
-        "end": "2026-02-04 16:39",
-        "channels": [
-            {
-                "channel_name": "Arena Sport 2",
-                "channel_code": "hr",
-                "url": "https://cdn-live.tv/api/v1/channels/player/?name=arena+sport+2&code=hr&user=cdnlivetv&plan=free",
-                "image": "https://api.cdn-live.tv/api/v1/channels/images6318/croatia/arena-sport-2.webp",
-                "viewers": 0
-            },
-            {
-                "channel_name": "Digi Sport 1",
-                "channel_code": "ro",
-                "url": "https://cdn-live.tv/api/v1/channels/player/?name=digi+sport+1&code=ro&user=cdnlivetv&plan=free",
-                "image": "https://api.cdn-live.tv/api/v1/channels/images6318/romania/digi-sport-1.png",
-                "viewers": 0
-            },
-            {
-                "channel_name": "Prima Sport 1",
-                "channel_code": "ro",
-                "url": "https://cdn-live.tv/api/v1/channels/player/?name=prima+sport+1&code=ro&user=cdnlivetv&plan=free",
-                "image": "https://api.cdn-live.tv/api/v1/channels/images6318/romania/prima-sport-1.svg",
-                "viewers": 0
-            }
-        ],
-        "custom_sport_cat": "Soccer",
-        "provider": "CDN"
-    },
     "8nzEmxe5": {
         "gameID": "8nzEmxe5",
         "homeTeam": "OFI",
@@ -2251,45 +2212,6 @@
         "custom_sport_cat": "NHL",
         "provider": "CDN"
     },
-    "KOMq0kw1": {
-        "gameID": "KOMq0kw1",
-        "homeTeam": "Metaloglobus",
-        "awayTeam": "Csikszereda",
-        "homeTeamIMG": "https://api.cdn-live.tv/api/v1/team/logo.png",
-        "awayTeamIMG": "https://api.cdn-live.tv/api/v1/team/images/283972.png",
-        "time": "14:00",
-        "tournament": "Liga I",
-        "country": "Romania",
-        "countryIMG": "https://flagcdn.com/w40/ro.png",
-        "status": "live",
-        "start": "2026-02-04 14:00",
-        "end": "2026-02-04 16:39",
-        "channels": [
-            {
-                "channel_name": "Arena Sport 2",
-                "channel_code": "hr",
-                "url": "https://cdn-live.tv/api/v1/channels/player/?name=arena+sport+2&code=hr&user=cdnlivetv&plan=free",
-                "image": "https://api.cdn-live.tv/api/v1/channels/images6318/croatia/arena-sport-2.webp",
-                "viewers": 0
-            },
-            {
-                "channel_name": "Digi Sport 1",
-                "channel_code": "ro",
-                "url": "https://cdn-live.tv/api/v1/channels/player/?name=digi+sport+1&code=ro&user=cdnlivetv&plan=free",
-                "image": "https://api.cdn-live.tv/api/v1/channels/images6318/romania/digi-sport-1.png",
-                "viewers": 0
-            },
-            {
-                "channel_name": "Prima Sport 1",
-                "channel_code": "ro",
-                "url": "https://cdn-live.tv/api/v1/channels/player/?name=prima+sport+1&code=ro&user=cdnlivetv&plan=free",
-                "image": "https://api.cdn-live.tv/api/v1/channels/images6318/romania/prima-sport-1.svg",
-                "viewers": 0
-            }
-        ],
-        "custom_sport_cat": "Soccer",
-        "provider": "CDN"
-    },
     "2dzuBZjp": {
         "gameID": "2dzuBZjp",
         "homeTeam": "OFI",
@@ -2413,7 +2335,7 @@
         "tournament": "Super League",
         "country": "Greece",
         "countryIMG": "https://flagcdn.com/w40/gr.png",
-        "status": "upcoming",
+        "status": "live",
         "start": "2026-02-04 16:30",
         "end": "2026-02-04 19:09",
         "channels": [
@@ -2438,7 +2360,7 @@
         "tournament": "Cypriot Cup",
         "country": "Cyprus",
         "countryIMG": "https://flagcdn.com/w40/cy.png",
-        "status": "upcoming",
+        "status": "live",
         "start": "2026-02-04 17:00",
         "end": "2026-02-04 19:39",
         "channels": [
@@ -2463,7 +2385,7 @@
         "tournament": "Coppa Italia",
         "country": "Italy",
         "countryIMG": "https://flagcdn.com/w40/it.png",
-        "status": "upcoming",
+        "status": "live",
         "start": "2026-02-04 17:00",
         "end": "2026-02-04 19:39",
         "channels": [
