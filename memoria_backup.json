@@ -1,43 +1,4 @@
 {
-    "y6gxe03f": {
-        "gameID": "y6gxe03f",
-        "homeTeam": "CSU Craiova",
-        "awayTeam": "O\u0163elul",
-        "homeTeamIMG": "https://api.cdn-live.tv/api/v1/team/images/116223.png",
-        "awayTeamIMG": "https://api.cdn-live.tv/api/v1/team/images/3291.png",
-        "time": "16:00",
-        "tournament": "Liga I",
-        "country": "Romania",
-        "countryIMG": "https://flagcdn.com/w40/ro.png",
-        "status": "live",
-        "start": "2026-02-05 16:00",
-        "end": "2026-02-05 18:39",
-        "channels": [
-            {
-                "channel_name": "Arena Sport 1",
-                "channel_code": "hr",
-                "url": "https://cdn-live.tv/api/v1/channels/player/?name=arena+sport+1&code=hr&user=cdnlivetv&plan=free",
-                "image": "https://api.cdn-live.tv/api/v1/channels/images6318/croatia/arena-sport-1.webp",
-                "viewers": 0
-            },
-            {
-                "channel_name": "Digi Sport 1",
-                "channel_code": "ro",
-                "url": "https://cdn-live.tv/api/v1/channels/player/?name=digi+sport+1&code=ro&user=cdnlivetv&plan=free",
-                "image": "https://api.cdn-live.tv/api/v1/channels/images6318/romania/digi-sport-1.png",
-                "viewers": 0
-            },
-            {
-                "channel_name": "Prima Sport 1",
-                "channel_code": "ro",
-                "url": "https://cdn-live.tv/api/v1/channels/player/?name=prima+sport+1&code=ro&user=cdnlivetv&plan=free",
-                "image": "https://api.cdn-live.tv/api/v1/channels/images6318/romania/prima-sport-1.svg",
-                "viewers": 0
-            }
-        ],
-        "custom_sport_cat": "Soccer",
-        "provider": "CDN"
-    },
     "Eo870KcZ": {
         "gameID": "Eo870KcZ",
         "homeTeam": "Fenerbah\u00e7e",
@@ -186,7 +147,7 @@
         "tournament": "Liga I",
         "country": "Romania",
         "countryIMG": "https://flagcdn.com/w40/ro.png",
-        "status": "upcoming",
+        "status": "live",
         "start": "2026-02-05 18:30",
         "end": "2026-02-05 21:09",
         "channels": [
@@ -225,7 +186,7 @@
         "tournament": "KNVB Beker",
         "country": "Netherlands",
         "countryIMG": "https://flagcdn.com/w40/nl.png",
-        "status": "upcoming",
+        "status": "live",
         "start": "2026-02-05 19:00",
         "end": "2026-02-05 21:39",
         "channels": [
