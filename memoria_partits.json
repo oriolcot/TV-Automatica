@@ -1,54 +1,4 @@
 {
-    "3HG9MsZh": {
-        "gameID": "3HG9MsZh",
-        "homeTeam": "CSKA Sofia",
-        "awayTeam": "Arda",
-        "homeTeamIMG": "https://api.cdn-live.tv/api/v1/team/images/3275.png",
-        "awayTeamIMG": "https://api.cdn-live.tv/api/v1/team/images/274971.png",
-        "time": "15:45",
-        "tournament": "Parva Liga",
-        "country": "Bulgaria",
-        "countryIMG": "https://flagcdn.com/w40/bg.png",
-        "status": "live",
-        "start": "2026-02-06 15:45",
-        "end": "2026-02-06 18:24",
-        "channels": [
-            {
-                "channel_name": "Diema Sport 1",
-                "channel_code": "bg",
-                "url": "https://cdn-live.tv/api/v1/channels/player/?name=diema+sport+1&code=bg&user=cdnlivetv&plan=free",
-                "image": "https://api.cdn-live.tv/api/v1/channels/images6318/bulgaria/diema-sports-1.png",
-                "viewers": 0
-            }
-        ],
-        "custom_sport_cat": "Soccer",
-        "provider": "CDN"
-    },
-    "xEyhfgqH": {
-        "gameID": "xEyhfgqH",
-        "homeTeam": "V\u00e1rda SE",
-        "awayTeam": "Kazincbarcika",
-        "homeTeamIMG": "https://api.cdn-live.tv/api/v1/team/logo.png",
-        "awayTeamIMG": "https://api.cdn-live.tv/api/v1/team/logo.png",
-        "time": "16:45",
-        "tournament": "NB1",
-        "country": "Hungary",
-        "countryIMG": "https://flagcdn.com/w40/hu.png",
-        "status": "live",
-        "start": "2026-02-06 16:45",
-        "end": "2026-02-06 19:24",
-        "channels": [
-            {
-                "channel_name": "M4 Sports",
-                "channel_code": "hu",
-                "url": "https://cdn-live.tv/api/v1/channels/player/?name=m4+sports&code=hu&user=cdnlivetv&plan=free",
-                "image": "https://api.cdn-live.tv/api/v1/channels/images6318/hungary/m4-sport.svg",
-                "viewers": 0
-            }
-        ],
-        "custom_sport_cat": "Soccer",
-        "provider": "CDN"
-    },
     "J3dvXT5b": {
         "gameID": "J3dvXT5b",
         "homeTeam": "Zrinjski",
@@ -451,7 +401,7 @@
         "tournament": "Premijer Liga",
         "country": "Bosnia and Herzegovina",
         "countryIMG": "https://flagcdn.com/w40/ba.png",
-        "status": "upcoming",
+        "status": "live",
         "start": "2026-02-06 19:00",
         "end": "2026-02-06 21:39",
         "channels": [
@@ -476,7 +426,7 @@
         "tournament": "Ligue 2",
         "country": "France",
         "countryIMG": "https://flagcdn.com/w40/fr.png",
-        "status": "upcoming",
+        "status": "live",
         "start": "2026-02-06 19:00",
         "end": "2026-02-06 21:39",
         "channels": [
@@ -501,7 +451,7 @@
         "tournament": "Ligue 2",
         "country": "France",
         "countryIMG": "https://flagcdn.com/w40/fr.png",
-        "status": "upcoming",
+        "status": "live",
         "start": "2026-02-06 19:00",
         "end": "2026-02-06 21:39",
         "channels": [
@@ -526,7 +476,7 @@
         "tournament": "Ligue 2",
         "country": "France",
         "countryIMG": "https://flagcdn.com/w40/fr.png",
-        "status": "upcoming",
+        "status": "live",
         "start": "2026-02-06 19:00",
         "end": "2026-02-06 21:39",
         "channels": [
@@ -565,7 +515,7 @@
         "tournament": "Ligue 2",
         "country": "France",
         "countryIMG": "https://flagcdn.com/w40/fr.png",
-        "status": "upcoming",
+        "status": "live",
         "start": "2026-02-06 19:00",
         "end": "2026-02-06 21:39",
         "channels": [
@@ -590,7 +540,7 @@
         "tournament": "Ligue 2",
         "country": "France",
         "countryIMG": "https://flagcdn.com/w40/fr.png",
-        "status": "upcoming",
+        "status": "live",
         "start": "2026-02-06 19:00",
         "end": "2026-02-06 21:39",
         "channels": [
@@ -615,7 +565,7 @@
         "tournament": "Eredivisie",
         "country": "Netherlands",
         "countryIMG": "https://flagcdn.com/w40/nl.png",
-        "status": "upcoming",
+        "status": "live",
         "start": "2026-02-06 19:00",
         "end": "2026-02-06 21:39",
         "channels": [
@@ -640,7 +590,7 @@
         "tournament": "Eerste Divisie",
         "country": "Netherlands",
         "countryIMG": "https://flagcdn.com/w40/nl.png",
-        "status": "upcoming",
+        "status": "live",
         "start": "2026-02-06 19:00",
         "end": "2026-02-06 21:39",
         "channels": [
@@ -665,7 +615,7 @@
         "tournament": "Eerste Divisie",
         "country": "Netherlands",
         "countryIMG": "https://flagcdn.com/w40/nl.png",
-        "status": "upcoming",
+        "status": "live",
         "start": "2026-02-06 19:00",
         "end": "2026-02-06 21:39",
         "channels": [
