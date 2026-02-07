@@ -10524,5 +10524,1253 @@
             }
         ],
         "gameID": "1447655558242445938"
+    },
+    "493556814179173757": {
+        "homeTeam": "Gold Zone: Day 1",
+        "awayTeam": "Gold Zone: Day 1",
+        "start": "2026-02-07 13:00",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/olympics/2026-02-07/gold-zone-day-1-1770469200",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "493556814179173757"
+    },
+    "2673442651275653608": {
+        "homeTeam": "Women's 3000m",
+        "awayTeam": "Women's 3000m",
+        "start": "2026-02-07 15:00",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/olympics/2026-02-07/speed-skating/womens-3000m-1770476400",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "2673442651275653608"
+    },
+    "2332367551354115925": {
+        "homeTeam": "USA vs. Finland (Women's Group A)",
+        "awayTeam": "USA vs. Finland (Women's Group A)",
+        "start": "2026-02-07 15:40",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/olympics/2026-02-07/hockey/usa-vs-finland-womens-group-a-1770478800",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "2332367551354115925"
+    },
+    "8535647777381313793": {
+        "homeTeam": "Women's Normal Hill",
+        "awayTeam": "Women's Normal Hill",
+        "start": "2026-02-07 16:45",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/olympics/2026-02-07/ski-jumping/womens-normal-hill-1770482700",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "8535647777381313793"
+    },
+    "1721511194988604940": {
+        "homeTeam": "Figure Skating: Training",
+        "awayTeam": "Figure Skating: Training",
+        "start": "2026-02-07 17:15",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/olympics/2026-02-07/figure-skating/figure-skating-training-1770484500",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "1721511194988604940"
+    },
+    "6196616948365503209": {
+        "homeTeam": "Men's Singles Luge: Run 2",
+        "awayTeam": "Men's Singles Luge: Run 2",
+        "start": "2026-02-07 17:30",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/olympics/2026-02-07/luge/mens-singles-luge-run-2-1770485400",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "6196616948365503209"
+    },
+    "7521648864236266276": {
+        "homeTeam": "Canada vs. Estonia (MD Round-Robin)",
+        "awayTeam": "Canada vs. Estonia (MD Round-Robin)",
+        "start": "2026-02-07 18:05",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/olympics/2026-02-07/curling/canada-vs-estonia-md-round-robin-1770487500",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "7521648864236266276"
+    },
+    "8310475019189810417": {
+        "homeTeam": "Czechia vs. Switzerland (MD Round-Robin)",
+        "awayTeam": "Czechia vs. Switzerland (MD Round-Robin)",
+        "start": "2026-02-07 18:05",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/olympics/2026-02-07/curling/czechia-vs-switzerland-md-round-robin-1770487500",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "8310475019189810417"
+    },
+    "4328695950248614728": {
+        "homeTeam": "Norway vs. Italy (MD Round-Robin)",
+        "awayTeam": "Norway vs. Italy (MD Round-Robin)",
+        "start": "2026-02-07 18:05",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/olympics/2026-02-07/curling/norway-vs-italy-md-round-robin-1770487500",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "4328695950248614728"
+    },
+    "5983658337625821535": {
+        "homeTeam": "South Korea vs. USA (MD Round-Robin)",
+        "awayTeam": "South Korea vs. USA (MD Round-Robin)",
+        "start": "2026-02-07 18:05",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/olympics/2026-02-07/curling/south-korea-vs-usa-md-round-robin-1770487500",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "5983658337625821535"
+    },
+    "2018256142896080671": {
+        "homeTeam": "Men's Snowboard Big Air: Final",
+        "awayTeam": "Men's Snowboard Big Air: Final",
+        "start": "2026-02-07 18:30",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/olympics/2026-02-07/snowboarding/mens-snowboard-big-air-final-1770489000",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "2018256142896080671"
+    },
+    "4627467932423435497": {
+        "homeTeam": "Team: Men's Short",
+        "awayTeam": "Team: Men's Short",
+        "start": "2026-02-07 18:45",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/olympics/2026-02-07/figure-skating/team-mens-short-1770489900",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "4627467932423435497"
+    },
+    "6080020252278783032": {
+        "homeTeam": "Switzerland vs. Canada (Women's Group A)",
+        "awayTeam": "Switzerland vs. Canada (Women's Group A)",
+        "start": "2026-02-07 20:10",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/olympics/2026-02-07/hockey/switzerland-vs-canada-womens-group-a-1770495000",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "6080020252278783032"
+    },
+    "8534899731922933204": {
+        "homeTeam": "Team: Free Dance",
+        "awayTeam": "Team: Free Dance",
+        "start": "2026-02-07 21:00",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/olympics/2026-02-07/figure-skating/team-free-dance-1770498000",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "8534899731922933204"
+    },
+    "259424145469156436": {
+        "homeTeam": "Seattle Seahawks vs. New England Patriots",
+        "awayTeam": "Seattle Seahawks vs. New England Patriots",
+        "start": "2026-02-08 23:30",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/nfl/2026-02-08/sea-ne",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "259424145469156436"
+    },
+    "1655710140426156404": {
+        "homeTeam": "Washington Wizards vs. Brooklyn Nets",
+        "awayTeam": "Washington Wizards vs. Brooklyn Nets",
+        "start": "2026-02-07 20:00",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/nba/2026-02-07/wsh-bkn",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "1655710140426156404"
+    },
+    "6022439652890901971": {
+        "homeTeam": "Houston Rockets vs. Oklahoma City Thunder",
+        "awayTeam": "Houston Rockets vs. Oklahoma City Thunder",
+        "start": "2026-02-07 20:30",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/nba/2026-02-07/hou-okc",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "6022439652890901971"
+    },
+    "8222687235969819068": {
+        "homeTeam": "Dallas Mavericks vs. San Antonio Spurs",
+        "awayTeam": "Dallas Mavericks vs. San Antonio Spurs",
+        "start": "2026-02-07 23:00",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/nba/2026-02-07/dal-sa",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "8222687235969819068"
+    },
+    "2640841210937396210": {
+        "homeTeam": "Utah Jazz vs. Orlando Magic",
+        "awayTeam": "Utah Jazz vs. Orlando Magic",
+        "start": "2026-02-08 00:00",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/nba/2026-02-07/utah-orl",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "2640841210937396210"
+    },
+    "4700381243717358997": {
+        "homeTeam": "Charlotte Hornets vs. Atlanta Hawks",
+        "awayTeam": "Charlotte Hornets vs. Atlanta Hawks",
+        "start": "2026-02-08 00:30",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/nba/2026-02-07/cha-atl",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "4700381243717358997"
+    },
+    "7819127770794573862": {
+        "homeTeam": "Denver Nuggets vs. Chicago Bulls",
+        "awayTeam": "Denver Nuggets vs. Chicago Bulls",
+        "start": "2026-02-08 01:00",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/nba/2026-02-07/den-chi",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "7819127770794573862"
+    },
+    "1795335473721059791": {
+        "homeTeam": "Golden State Warriors vs. Los Angeles Lakers",
+        "awayTeam": "Golden State Warriors vs. Los Angeles Lakers",
+        "start": "2026-02-08 01:30",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/nba/2026-02-07/gs-lal",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "1795335473721059791"
+    },
+    "2294509229938676652": {
+        "homeTeam": "Philadelphia 76ers vs. Phoenix Suns",
+        "awayTeam": "Philadelphia 76ers vs. Phoenix Suns",
+        "start": "2026-02-08 02:00",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/nba/2026-02-07/phi-phx",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "2294509229938676652"
+    },
+    "5998516453147317434": {
+        "homeTeam": "Memphis Grizzlies vs. Portland Trail Blazers",
+        "awayTeam": "Memphis Grizzlies vs. Portland Trail Blazers",
+        "start": "2026-02-08 03:00",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/nba/2026-02-07/mem-por",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "5998516453147317434"
+    },
+    "9124420955585679952": {
+        "homeTeam": "Cleveland Cavaliers vs. Sacramento Kings",
+        "awayTeam": "Cleveland Cavaliers vs. Sacramento Kings",
+        "start": "2026-02-08 03:00",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/nba/2026-02-07/cle-sac",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "9124420955585679952"
+    },
+    "7744818023677005547": {
+        "homeTeam": "PFL Road to Dubai",
+        "awayTeam": "PFL Road to Dubai",
+        "start": "2026-02-07 14:00",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/pfl-road-to-dubai",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "7744818023677005547"
+    },
+    "6236644413866927760": {
+        "homeTeam": "GLORY 105",
+        "awayTeam": "GLORY 105",
+        "start": "2026-02-07 17:30",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/glory-105",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "6236644413866927760"
+    },
+    "1454828276344196196": {
+        "homeTeam": "UFC Fight Night: Bautista vs. Oliveira",
+        "awayTeam": "UFC Fight Night: Bautista vs. Oliveira",
+        "start": "2026-02-07 22:00",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/ufc-fight-night-february-07-2026",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "1454828276344196196"
+    },
+    "486906996350361462": {
+        "homeTeam": "OKTAGON 84 (English)",
+        "awayTeam": "OKTAGON 84 (English)",
+        "start": "2026-02-14 17:00",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/oktagon-84-english",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "486906996350361462"
+    },
+    "1250064958884076105": {
+        "homeTeam": "OKTAGON 84 (German)",
+        "awayTeam": "OKTAGON 84 (German)",
+        "start": "2026-02-14 17:00",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/oktagon-84-german",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "1250064958884076105"
+    },
+    "1242489499421454917": {
+        "homeTeam": "OKTAGON 84 (Czech)",
+        "awayTeam": "OKTAGON 84 (Czech)",
+        "start": "2026-02-14 17:00",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/oktagon-84-czech",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "1242489499421454917"
+    },
+    "5050534569784969071": {
+        "homeTeam": "1. FC Heidenheim 1846 vs. Hamburg SV",
+        "awayTeam": "1. FC Heidenheim 1846 vs. Hamburg SV",
+        "start": "2026-02-07 14:30",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/bundesliga/2026-02-07/hdh-hsv",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "5050534569784969071"
+    },
+    "1947213411757924132": {
+        "homeTeam": "Mainz vs. FC Augsburg",
+        "awayTeam": "Mainz vs. FC Augsburg",
+        "start": "2026-02-07 14:30",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/bundesliga/2026-02-07/m05-fca",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "1947213411757924132"
+    },
+    "6196510764030366487": {
+        "homeTeam": "SC Freiburg vs. Werder Bremen",
+        "awayTeam": "SC Freiburg vs. Werder Bremen",
+        "start": "2026-02-07 14:30",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/bundesliga/2026-02-07/scf-svw",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "6196510764030366487"
+    },
+    "2606561612643277921": {
+        "homeTeam": "St. Pauli vs. VfB Stuttgart",
+        "awayTeam": "St. Pauli vs. VfB Stuttgart",
+        "start": "2026-02-07 14:30",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/bundesliga/2026-02-07/stp-vfb",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "2606561612643277921"
+    },
+    "3313022250880800981": {
+        "homeTeam": "VfL Wolfsburg vs. Borussia Dortmund",
+        "awayTeam": "VfL Wolfsburg vs. Borussia Dortmund",
+        "start": "2026-02-07 14:30",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/bundesliga/2026-02-07/wob-dor",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "3313022250880800981"
+    },
+    "7417935911971715145": {
+        "homeTeam": "Goal Rush",
+        "awayTeam": "Goal Rush",
+        "start": "2026-02-07 15:00",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/premierleague/goal-rush",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "7417935911971715145"
+    },
+    "5250232510574101926": {
+        "homeTeam": "AFC Bournemouth vs. Aston Villa",
+        "awayTeam": "AFC Bournemouth vs. Aston Villa",
+        "start": "2026-02-07 15:00",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/premierleague/2026-02-07/bou-avl",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "5250232510574101926"
+    },
+    "1654573770963845133": {
+        "homeTeam": "Arsenal vs. Sunderland",
+        "awayTeam": "Arsenal vs. Sunderland",
+        "start": "2026-02-07 15:00",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/premierleague/2026-02-07/ars-sun",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "1654573770963845133"
+    },
+    "6960404247261092267": {
+        "homeTeam": "Burnley vs. West Ham United",
+        "awayTeam": "Burnley vs. West Ham United",
+        "start": "2026-02-07 15:00",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/premierleague/2026-02-07/bur-whu",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "6960404247261092267"
+    },
+    "3528455731045017665": {
+        "homeTeam": "Fulham vs. Everton",
+        "awayTeam": "Fulham vs. Everton",
+        "start": "2026-02-07 15:00",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/premierleague/2026-02-07/ful-eve",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "3528455731045017665"
+    },
+    "5799070342691756507": {
+        "homeTeam": "Wolverhampton Wanderers vs. Chelsea",
+        "awayTeam": "Wolverhampton Wanderers vs. Chelsea",
+        "start": "2026-02-07 15:00",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/premierleague/2026-02-07/wol-che",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "5799070342691756507"
+    },
+    "34659767266596995": {
+        "homeTeam": "Barcelona vs. Mallorca",
+        "awayTeam": "Barcelona vs. Mallorca",
+        "start": "2026-02-07 15:15",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/laliga/2026-02-07/bar-mll",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "34659767266596995"
+    },
+    "2519359718151449610": {
+        "homeTeam": "Lens vs. Stade Rennais",
+        "awayTeam": "Lens vs. Stade Rennais",
+        "start": "2026-02-07 16:00",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/ligue1/2026-02-07/rcl-ren",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "2519359718151449610"
+    },
+    "4091639610274194512": {
+        "homeTeam": "Genoa vs. Napoli",
+        "awayTeam": "Genoa vs. Napoli",
+        "start": "2026-02-07 17:00",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/seriea/2026-02-07/gen-nap",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "4091639610274194512"
+    },
+    "149976733948028499": {
+        "homeTeam": "Sevilla vs. Girona",
+        "awayTeam": "Sevilla vs. Girona",
+        "start": "2026-02-07 17:30",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/laliga/2026-02-07/sev-gir",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "149976733948028499"
+    },
+    "6512816648946506280": {
+        "homeTeam": "Borussia M\u00f6nchengladbach vs. Bayer Leverkusen",
+        "awayTeam": "Borussia M\u00f6nchengladbach vs. Bayer Leverkusen",
+        "start": "2026-02-07 17:30",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/bundesliga/2026-02-07/bmg-b04",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "6512816648946506280"
+    },
+    "5239981499246258238": {
+        "homeTeam": "Newcastle United vs. Brentford",
+        "awayTeam": "Newcastle United vs. Brentford",
+        "start": "2026-02-07 17:30",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/premierleague/2026-02-07/new-bre",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "5239981499246258238"
+    },
+    "3869843446266038948": {
+        "homeTeam": "Brest vs. Lorient",
+        "awayTeam": "Brest vs. Lorient",
+        "start": "2026-02-07 18:00",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/ligue1/2026-02-07/bre-lor",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "3869843446266038948"
+    },
+    "6991185979756843368": {
+        "homeTeam": "Fiorentina vs. Torino",
+        "awayTeam": "Fiorentina vs. Torino",
+        "start": "2026-02-07 19:45",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/seriea/2026-02-07/fio-tor",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "6991185979756843368"
+    },
+    "8601644429704525109": {
+        "homeTeam": "Real Sociedad vs. Elche",
+        "awayTeam": "Real Sociedad vs. Elche",
+        "start": "2026-02-07 20:00",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/laliga/2026-02-07/rso-elc",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "8601644429704525109"
+    },
+    "6856542813955998857": {
+        "homeTeam": "Nantes vs. Lyon",
+        "awayTeam": "Nantes vs. Lyon",
+        "start": "2026-02-07 20:05",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/ligue1/2026-02-07/nan-lyon",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "6856542813955998857"
+    },
+    "8992268844405008976": {
+        "homeTeam": "Bologna vs. Parma",
+        "awayTeam": "Bologna vs. Parma",
+        "start": "2026-02-08 11:30",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/seriea/2026-02-08/bol-par",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "8992268844405008976"
+    },
+    "1947161947041677422": {
+        "homeTeam": "Alav\u00e9s vs. Getafe",
+        "awayTeam": "Alav\u00e9s vs. Getafe",
+        "start": "2026-02-08 13:00",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/laliga/2026-02-08/ala-get",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "1947161947041677422"
+    },
+    "2853469228624797401": {
+        "homeTeam": "Brighton & Hove Albion vs. Crystal Palace",
+        "awayTeam": "Brighton & Hove Albion vs. Crystal Palace",
+        "start": "2026-02-08 14:00",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/premierleague/2026-02-08/bha-cry",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "2853469228624797401"
+    },
+    "892041817080073652": {
+        "homeTeam": "Lecce vs. Udinese",
+        "awayTeam": "Lecce vs. Udinese",
+        "start": "2026-02-08 14:00",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/seriea/2026-02-08/lec-udi",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "892041817080073652"
+    },
+    "7161758591492366166": {
+        "homeTeam": "Nice vs. AS Monaco",
+        "awayTeam": "Nice vs. AS Monaco",
+        "start": "2026-02-08 14:00",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/ligue1/2026-02-08/nice-mon",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "7161758591492366166"
+    },
+    "9128593839525233973": {
+        "homeTeam": "FC Cologne vs. RB Leipzig",
+        "awayTeam": "FC Cologne vs. RB Leipzig",
+        "start": "2026-02-08 14:30",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/bundesliga/2026-02-08/koe-rbl",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "9128593839525233973"
+    },
+    "1029370674477716990": {
+        "homeTeam": "Athletic Club vs. Levante",
+        "awayTeam": "Athletic Club vs. Levante",
+        "start": "2026-02-08 15:15",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/laliga/2026-02-08/ath-lev",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "1029370674477716990"
+    },
+    "892158965203124554": {
+        "homeTeam": "AJ Auxerre vs. Paris FC",
+        "awayTeam": "AJ Auxerre vs. Paris FC",
+        "start": "2026-02-08 16:15",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/ligue1/2026-02-08/aux-par",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "892158965203124554"
+    },
+    "6127641059949395459": {
+        "homeTeam": "Angers vs. Toulouse",
+        "awayTeam": "Angers vs. Toulouse",
+        "start": "2026-02-08 16:15",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/ligue1/2026-02-08/ang-tou",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "6127641059949395459"
+    },
+    "7156476961005065393": {
+        "homeTeam": "Le Havre AC vs. Strasbourg",
+        "awayTeam": "Le Havre AC vs. Strasbourg",
+        "start": "2026-02-08 16:15",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/ligue1/2026-02-08/hac-str",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "7156476961005065393"
+    },
+    "2116027167538503459": {
+        "homeTeam": "Bayern Munich vs. TSG Hoffenheim",
+        "awayTeam": "Bayern Munich vs. TSG Hoffenheim",
+        "start": "2026-02-08 16:30",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/bundesliga/2026-02-08/mun-tsg",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "2116027167538503459"
+    },
+    "3223159553389890898": {
+        "homeTeam": "Liverpool vs. Manchester City",
+        "awayTeam": "Liverpool vs. Manchester City",
+        "start": "2026-02-08 16:30",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/premierleague/2026-02-08/liv-mnc",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "3223159553389890898"
+    },
+    "2617084795006350407": {
+        "homeTeam": "Sassuolo vs. Inter Milan",
+        "awayTeam": "Sassuolo vs. Inter Milan",
+        "start": "2026-02-08 17:00",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/seriea/2026-02-08/sas-int",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "2617084795006350407"
+    },
+    "2312517395478348425": {
+        "homeTeam": "Atl\u00e9tico Madrid vs. Real Betis",
+        "awayTeam": "Atl\u00e9tico Madrid vs. Real Betis",
+        "start": "2026-02-08 17:30",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/laliga/2026-02-08/atm-bet",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "2312517395478348425"
+    },
+    "3807240661659043057": {
+        "homeTeam": "Juventus vs. Lazio",
+        "awayTeam": "Juventus vs. Lazio",
+        "start": "2026-02-08 19:45",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/seriea/2026-02-08/juv-laz",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "3807240661659043057"
+    },
+    "5409176999342405782": {
+        "homeTeam": "Paris Saint-Germain vs. Marseille",
+        "awayTeam": "Paris Saint-Germain vs. Marseille",
+        "start": "2026-02-08 19:45",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/ligue1/2026-02-08/psg-olm",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "5409176999342405782"
+    },
+    "5109932129295216299": {
+        "homeTeam": "Valencia vs. Real Madrid",
+        "awayTeam": "Valencia vs. Real Madrid",
+        "start": "2026-02-08 20:00",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/laliga/2026-02-08/val-rma",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "5109932129295216299"
+    },
+    "7092250968604447867": {
+        "homeTeam": "Atalanta vs. Cremonese",
+        "awayTeam": "Atalanta vs. Cremonese",
+        "start": "2026-02-09 17:30",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/seriea/2026-02-09/ata-cre",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "7092250968604447867"
+    },
+    "6319426530882515961": {
+        "homeTeam": "AS Roma vs. Cagliari",
+        "awayTeam": "AS Roma vs. Cagliari",
+        "start": "2026-02-09 19:45",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/seriea/2026-02-09/roma-cag",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "6319426530882515961"
+    },
+    "5811561705103196007": {
+        "homeTeam": "Villarreal vs. Espanyol",
+        "awayTeam": "Villarreal vs. Espanyol",
+        "start": "2026-02-09 20:00",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/laliga/2026-02-09/vil-esp",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "5811561705103196007"
+    },
+    "571910121906096060": {
+        "homeTeam": "Puppy Bowl XXII",
+        "awayTeam": "Puppy Bowl XXII",
+        "start": "2026-02-08 19:00",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/puppy-bowl-xxii",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "571910121906096060"
+    },
+    "1542192675623709630": {
+        "homeTeam": "Supercross: Glendale",
+        "awayTeam": "Supercross: Glendale",
+        "start": "2026-02-07 18:00",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/smx-wk5",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "1542192675623709630"
+    },
+    "9199864966905209065": {
+        "homeTeam": "Pre-Season Testing - Day 1",
+        "awayTeam": "Pre-Season Testing - Day 1",
+        "start": "2026-02-11 07:00",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/f1/2026/pre-season-testing-1/fp1",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "9199864966905209065"
+    },
+    "3276874013108174784": {
+        "homeTeam": "Pre-Season Testing - Day 2",
+        "awayTeam": "Pre-Season Testing - Day 2",
+        "start": "2026-02-12 07:00",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/f1/2026/pre-season-testing-1/fp2",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "3276874013108174784"
+    },
+    "3752721931762471913": {
+        "homeTeam": "Pre-Season Testing - Day 3",
+        "awayTeam": "Pre-Season Testing - Day 3",
+        "start": "2026-02-13 07:00",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/f1/2026/pre-season-testing-1/fp3",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "3752721931762471913"
+    },
+    "6550346876137683090": {
+        "homeTeam": "AEW: Saturday Night Collision",
+        "awayTeam": "AEW: Saturday Night Collision",
+        "start": "2026-02-08 01:00",
+        "custom_sport_cat": "Other",
+        "status": "upcoming",
+        "provider": "PPV",
+        "channels": [
+            {
+                "channel_name": "Link",
+                "url": "https://modistreams.org/embed/aew/collision/2026-02-07",
+                "channel_code": "ppv"
+            }
+        ],
+        "gameID": "6550346876137683090"
     }
 }
