@@ -24,12 +24,12 @@ jobs:
       - name: 📦 Instal·lar llibreries
         run: pip install requests
 
-      - name: 🚀 GENERAR WEB (Mètode Redirecció)
+      - name: 🚀 GENERAR WEB (Mode Debug Total)
         env:
           API_URL: ${{ secrets.API_URL }}
           API_URL_PPV: ${{ secrets.API_URL_PPV }}
-        # AQUESTA ÉS LA LÍNIA MÀGICA:
-        run: python generator.py > index.html
+        # AFEGIM "2>&1" AL FINAL PERQUÈ ELS ERRORS SURTIN A LA WEB
+        run: python generator.py > index.html 2>&1
 
       - name: 🔍 VERIFICAR ARXIU (Debug)
         run: |
