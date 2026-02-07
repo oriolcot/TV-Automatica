@@ -234,11 +234,11 @@ def main():
                 content += "</div></div>"
             content += "</div></div>"
 
-        # CORRECCIÓ CLAU AQUÍ BAIX:
+        # CORRECCIÓ CLAU: Busquem la marca exacta
         if os.path.exists(TEMPLATE_FILE):
             with open(TEMPLATE_FILE, 'r', encoding='utf-8') as f: template = f.read()
-            html = template.replace('', navbar) # CORREGIT
-            html = html.replace('', content)   # CORREGIT
+            html = template.replace('', navbar)
+            html = html.replace('', content)
             
             with open("index.html", "w", encoding="utf-8") as f: f.write(html)
             print("Web Generated Successfully.")
