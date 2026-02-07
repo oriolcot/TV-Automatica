@@ -2,40 +2,57 @@ name: Actualitzar Futbol
 
 on:
   schedule:
-    - cron: '0 */4 * * *' # Executa cada 4 hores
+    - cron: '0 */4 * * *' # Cada 4 hores
   workflow_dispatch: # Botó manual
 
 permissions:
-  contents: write # IMPORTANT: Permet escriure al repositori
+  contents: write # ⚠️ IMPRESCINDIBLE per guardar fitxers
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Baixar codi
+      - name: 📥 Baixar el codi
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Baixa tot l'historial per evitar errors de git
 
-      - name: Configurar Python
+      - name: 🐍 Configurar Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
 
-      - name: Instal·lar llibreries
+      - name: 📦 Instal·lar llibreries
         run: pip install requests
 
-      - name: Executar Generador
+      - name: 🚀 Executar Generador
         env:
           API_URL: ${{ secrets.API_URL }}
           API_URL_PPV: ${{ secrets.API_URL_PPV }}
         run: python generator.py
 
-      - name: 💾 Guardar i Pujar Canvis (Commit & Push)
+      - name: 🔍 DIAGNÒSTIC - Comprovar si existeix index.html
+        run: |
+          ls -la
+          if [ -f index.html ]; then
+            echo "✅ ÈXIT: El fitxer index.html s'ha generat correctament!"
+          else
+            echo "❌ ERROR FATAL: El fitxer index.html NO existeix. El script de Python ha fallat silenciosament."
+            exit 1
+          fi
+
+      - name: 💾 Guardar i Pujar (Push automàtic a la branca actual)
         run: |
           git config --global user.name "GitHub Action Bot"
           git config --global user.email "action@github.com"
-          # Afegim explícitament els fitxers que volem guardar
-          git add index.html memoria_partits.json memoria_backup.json
-          # Fem commit només si hi ha canvis
-          git commit -m "Auto-update: Nous partits ⚽" || echo "No hi ha canvis per guardar"
-          git push
+          
+          # Forcem l'afegit del fitxer per si de cas
+          git add -f index.html memoria_partits.json memoria_backup.json
+          
+          # Mirem l'estat abans de fer commit
+          git status
+          
+          # Fem commit i push a la branca que toqui (main o master)
+          git commit -m "Auto-update: Web actualitzada ⚽" || echo "⚠️ No hi ha canvis nous, tot està al dia."
+          git push origin HEAD:${{ github.ref_name }}
