@@ -9,7 +9,6 @@
     :root { --bg: #111827; --card: #1f2937; --text: #f3f4f6; --accent: #3b82f6; --live: #ef4444; --border: #374151; }
     body { background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, sans-serif; margin: 0; padding: 20px; padding-bottom: 60px; }
     
-    /* Navbar Estil Netflix */
     .navbar { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 15px; margin-bottom: 30px; scrollbar-width: none; }
     .nav-btn { 
         background: var(--card); color: #9ca3af; padding: 10px 20px; border-radius: 99px; 
@@ -17,15 +16,12 @@
     }
     .nav-btn:hover, .nav-btn.active { background: var(--accent); color: white; border-color: var(--accent); transform: translateY(-2px); }
     
-    /* Títols */
     .sport-section { margin-bottom: 40px; animation: fadeIn 0.5s ease-in; }
     .sport-title { font-size: 1.8rem; font-weight: 800; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; color: white; }
     .sport-icon { background: var(--accent); width: 4px; height: 24px; border-radius: 2px; display: inline-block; }
     
-    /* Graella */
     .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; }
     
-    /* Targeta */
     .card { 
         background: var(--card); border-radius: 16px; overflow: hidden; border: 1px solid var(--border); 
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3); transition: transform 0.2s; display: flex; flex-direction: column;
@@ -42,7 +38,6 @@
     .teams { font-size: 1.1rem; font-weight: 700; line-height: 1.4; color: white; }
     .versus { color: #6b7280; font-size: 0.9rem; margin: 0 8px; font-weight: 400; }
 
-    /* Canals */
     .channels { padding: 16px; display: flex; flex-wrap: wrap; gap: 10px; background: #1a222e; flex-grow: 1; align-content: flex-start; }
     .btn { 
         background: #374151; color: #e5e7eb; padding: 8px 14px; border-radius: 8px; 
@@ -50,7 +45,7 @@
         transition: all 0.2s; user-select: none; border: 1px solid transparent; text-decoration: none; width: 100%; justify-content: flex-start;
     }
     .btn:hover { background: var(--accent); color: white; border-color: #93c5fd; }
-    .flag-img { width: 20px; height: 15px; object-fit: cover; border-radius: 3px; }
+    .flag-img { width: 20px; height: 15px; object-fit: cover; border-radius: 3px; box-shadow: 0 1px 2px rgba(0,0,0,0.3); }
 
     .footer { text-align: center; margin-top: 60px; color: #6b7280; font-size: 0.9rem; border-top: 1px solid var(--border); padding-top: 30px; }
     
@@ -74,20 +69,6 @@
                         <div class="match-info"><div class="teams">Boston Celtics <span class="versus">vs</span> New York Knicks</div></div>
                     </div>
                     <div class="channels"><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWVzcG4mY29kZT1teCZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/mx.png" class="flag-img" onerror="this.style.display='none'"> ESPN</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWFiYyZjb2RlPXVzJnVzZXI9Y2RubGl2ZXR2JnBsYW49ZnJlZQ==" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/us.png" class="flag-img" onerror="this.style.display='none'"> ABC</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPXNwb3J0K3R2KzQmY29kZT1wdCZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/pt.png" class="flag-img" onerror="this.style.display='none'"> Sport TV 4</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWVzcG4rMyZjb2RlPW5sJnVzZXI9Y2RubGl2ZXR2JnBsYW49ZnJlZQ==" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/nl.png" class="flag-img" onerror="this.style.display='none'"> ESPN 3</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWNvc21vdGUrc3BvcnQrNCZjb2RlPWdyJnVzZXI9Y2RubGl2ZXR2JnBsYW49ZnJlZQ==" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/gr.png" class="flag-img" onerror="this.style.display='none'"> Cosmote Sport 4</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWRpZW1hK3Nwb3J0KzEmY29kZT1iZyZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/bg.png" class="flag-img" onerror="this.style.display='none'"> Diema Sport 1</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWFyZW5hKzMrcHJlbWl1bSZjb2RlPXJzJnVzZXI9Y2RubGl2ZXR2JnBsYW49ZnJlZQ==" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/rs.png" class="flag-img" onerror="this.style.display='none'"> Arena 3 Premium</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPXNwb3J0K2tsdWIrNCZjb2RlPXJzJnVzZXI9Y2RubGl2ZXR2JnBsYW49ZnJlZQ==" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/rs.png" class="flag-img" onerror="this.style.display='none'"> Sport Klub 4</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPW5vdmErc3BvcnQrMiZjb2RlPWN6JnVzZXI9Y2RubGl2ZXR2JnBsYW49ZnJlZQ==" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/cz.png" class="flag-img" onerror="this.style.display='none'"> Nova Sport 2</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWVzcG4rMiZjb2RlPWJyJnVzZXI9Y2RubGl2ZXR2JnBsYW49ZnJlZQ==" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/br.png" class="flag-img" onerror="this.style.display='none'"> ESPN 2</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWVzcG4mY29kZT1iciZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/br.png" class="flag-img" onerror="this.style.display='none'"> ESPN</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWVzcG4rMiZjb2RlPWFyJnVzZXI9Y2RubGl2ZXR2JnBsYW49ZnJlZQ==" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/ar.png" class="flag-img" onerror="this.style.display='none'"> ESPN 2</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPXNwb3J0KzUrbGl2ZSZjb2RlPWlsJnVzZXI9Y2RubGl2ZXR2JnBsYW49ZnJlZQ==" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/il.png" class="flag-img" onerror="this.style.display='none'"> Sport 5 Live</div></div>
-                </div>
-                <div class="card">
-                    <div class="header">
-                        <div class="meta"><span class="utc-time" data-ts="2026-02-08 19:00">2026-02-08 19:00</span></div>
-                        <div class="match-info"><div class="teams">Washington Wizards <span class="versus">vs</span> Miami Heat</div></div>
-                    </div>
-                    <div class="channels"></div>
-                </div>
-                <div class="card">
-                    <div class="header">
-                        <div class="meta"><span class="utc-time" data-ts="2026-02-08 19:00">2026-02-08 19:00</span></div>
-                        <div class="match-info"><div class="teams">Washington Wizards <span class="versus">vs</span> Miami Heat</div></div>
-                    </div>
-                    <div class="channels"></div>
                 </div>
                 <div class="card">
                     <div class="header">
@@ -155,26 +136,12 @@
                 <div class="card">
                     <div class="header">
                         <div class="meta"><span class="utc-time" data-ts="2026-02-08 10:30">2026-02-08 10:30</span></div>
-                        <div class="match-info"><div class="teams">Serik Belediyespor <span class="versus">vs</span> Iğdır FK</div></div>
-                    </div>
-                    <div class="channels"></div>
-                </div>
-                <div class="card">
-                    <div class="header">
-                        <div class="meta"><span class="utc-time" data-ts="2026-02-08 10:30">2026-02-08 10:30</span></div>
                         <div class="match-info"><div class="teams">Keçiörengücü <span class="versus">vs</span> Bandırmaspor</div></div>
                     </div>
                     <div class="channels"><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPXRydCtzcG9yJmNvZGU9dHImdXNlcj1jZG5saXZldHYmcGxhbj1mcmVl" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/tr.png" class="flag-img" onerror="this.style.display='none'"> TRT Spor</div></div>
                 </div>
                 <div class="card">
                     <div class="header">
-                        <div class="meta"><span class="utc-time" data-ts="2026-02-08 10:30">2026-02-08 10:30</span></div>
-                        <div class="match-info"><div class="teams">Serik Belediyespor <span class="versus">vs</span> Iğdır FK</div></div>
-                    </div>
-                    <div class="channels"></div>
-                </div>
-                <div class="card">
-                    <div class="header">
                         <div class="meta"><span class="utc-time" data-ts="2026-02-08 11:15">2026-02-08 11:15</span><span class="live-badge"><div class="live-dot"></div> EN VIU</span></div>
                         <div class="match-info"><div class="teams">Utrecht <span class="versus">vs</span> Feyenoord</div></div>
                     </div>
@@ -344,13 +311,6 @@
                 <div class="card">
                     <div class="header">
                         <div class="meta"><span class="utc-time" data-ts="2026-02-08 13:00">2026-02-08 13:00</span><span class="live-badge"><div class="live-dot"></div> EN VIU</span></div>
-                        <div class="match-info"><div class="teams">Adana Demirspor <span class="versus">vs</span> Bodrumspor</div></div>
-                    </div>
-                    <div class="channels"></div>
-                </div>
-                <div class="card">
-                    <div class="header">
-                        <div class="meta"><span class="utc-time" data-ts="2026-02-08 13:00">2026-02-08 13:00</span><span class="live-badge"><div class="live-dot"></div> EN VIU</span></div>
                         <div class="match-info"><div class="teams">Ümranıyespor <span class="versus">vs</span> İstanbulspor</div></div>
                     </div>
                     <div class="channels"><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPXRydCtzcG9yJmNvZGU9dHImdXNlcj1jZG5saXZldHYmcGxhbj1mcmVl" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/tr.png" class="flag-img" onerror="this.style.display='none'"> TRT Spor</div></div>
@@ -368,13 +328,6 @@
                         <div class="match-info"><div class="teams">Deportivo Alavés <span class="versus">vs</span> Getafe</div></div>
                     </div>
                     <div class="channels"><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPW0rbGFsaWdhJmNvZGU9ZXMmdXNlcj1jZG5saXZldHYmcGxhbj1mcmVl" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/es.png" class="flag-img" onerror="this.style.display='none'"> M LALIGA</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWJlaW4rc3BvcnRzKzEmY29kZT11cyZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/us.png" class="flag-img" onerror="this.style.display='none'"> beIN SPORTS 1</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWVzcG4rZGVwb3J0ZXMmY29kZT11cyZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/us.png" class="flag-img" onerror="this.style.display='none'"> ESPN Deportes</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWxhbGlnYSt0diZjb2RlPWdiJnVzZXI9Y2RubGl2ZXR2JnBsYW49ZnJlZQ==" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/gb.png" class="flag-img" onerror="this.style.display='none'"> LaLiga TV</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPXZpYXBsYXkrc3BvcnRzKzImY29kZT1nYiZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/gb.png" class="flag-img" onerror="this.style.display='none'"> Viaplay Sports 2</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPXByZW1pZXIrc3BvcnRzKzImY29kZT1nYiZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/gb.png" class="flag-img" onerror="this.style.display='none'"> Premier Sports 2</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPXN1cGVyc3BvcnQrbGFsaWdhJmNvZGU9emEmdXNlcj1jZG5saXZldHYmcGxhbj1mcmVl" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/za.png" class="flag-img" onerror="this.style.display='none'"> SuperSport LaLiga</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWJlaW4rc3BvcnRzK21heCs1JmNvZGU9ZnImdXNlcj1jZG5saXZldHYmcGxhbj1mcmVl" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/fr.png" class="flag-img" onerror="this.style.display='none'"> beIN SPORTS MAX 5</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWRhem4rMiZjb2RlPXB0JnVzZXI9Y2RubGl2ZXR2JnBsYW49ZnJlZQ==" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/pt.png" class="flag-img" onerror="this.style.display='none'"> DAZN 2</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPXppZ2dvK3Nwb3J0KzEmY29kZT1ubCZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/nl.png" class="flag-img" onerror="this.style.display='none'"> Ziggo Sport 1</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPW5vdmErc3BvcnRzKzEmY29kZT1nciZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/gr.png" class="flag-img" onerror="this.style.display='none'"> Nova Sports 1</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWVsZXZlbitzcG9ydHMrMyZjb2RlPXBsJnVzZXI9Y2RubGl2ZXR2JnBsYW49ZnJlZQ==" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/pl.png" class="flag-img" onerror="this.style.display='none'"> Eleven Sports 3</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPW1hdGNoK2Zvb3RiYWxsKzImY29kZT1ydSZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/ru.png" class="flag-img" onerror="this.style.display='none'"> Match Football 2</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPW1heCtzcG9ydCs0JmNvZGU9YmcmdXNlcj1jZG5saXZldHYmcGxhbj1mcmVl" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/bg.png" class="flag-img" onerror="this.style.display='none'"> Max Sport 4</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWFyZW5hKzIrcHJlbWl1bSZjb2RlPXJzJnVzZXI9Y2RubGl2ZXR2JnBsYW49ZnJlZQ==" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/rs.png" class="flag-img" onerror="this.style.display='none'"> Arena 2 Premium</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWFyZW5hK3Nwb3J0KzMmY29kZT1ociZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/hr.png" class="flag-img" onerror="this.style.display='none'"> Arena Sport 3</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPW5vdmErc3BvcnQrNCZjb2RlPWN6JnVzZXI9Y2RubGl2ZXR2JnBsYW49ZnJlZQ==" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/cz.png" class="flag-img" onerror="this.style.display='none'"> Nova Sport 4</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPXR2NCtzcG9ydCtsaXZlKzEmY29kZT1zZSZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/se.png" class="flag-img" onerror="this.style.display='none'"> TV4 Sport Live 1</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWVzcG4rMiZjb2RlPWFyJnVzZXI9Y2RubGl2ZXR2JnBsYW49ZnJlZQ==" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/ar.png" class="flag-img" onerror="this.style.display='none'"> ESPN 2</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPXByaW1hK3Nwb3J0KzMmY29kZT1ybyZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/ro.png" class="flag-img" onerror="this.style.display='none'"> Prima Sport 3</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWJlaW4rc3BvcnRzKzUmY29kZT1zYSZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/sa.png" class="flag-img" onerror="this.style.display='none'"> beIN SPORTS 5</div></div>
-                </div>
-                <div class="card">
-                    <div class="header">
-                        <div class="meta"><span class="utc-time" data-ts="2026-02-08 13:00">2026-02-08 13:00</span><span class="live-badge"><div class="live-dot"></div> EN VIU</span></div>
-                        <div class="match-info"><div class="teams">Adana Demirspor <span class="versus">vs</span> Bodrumspor</div></div>
-                    </div>
-                    <div class="channels"></div>
                 </div>
                 <div class="card">
                     <div class="header">
@@ -414,65 +367,9 @@
                 <div class="card">
                     <div class="header">
                         <div class="meta"><span class="utc-time" data-ts="2026-02-08 13:30">2026-02-08 13:30</span></div>
-                        <div class="match-info"><div class="teams">Willem II <span class="versus">vs</span> RKC Waalwijk</div></div>
-                    </div>
-                    <div class="channels"></div>
-                </div>
-                <div class="card">
-                    <div class="header">
-                        <div class="meta"><span class="utc-time" data-ts="2026-02-08 13:30">2026-02-08 13:30</span></div>
-                        <div class="match-info"><div class="teams">Lecco <span class="versus">vs</span> Pro Vercelli</div></div>
-                    </div>
-                    <div class="channels"></div>
-                </div>
-                <div class="card">
-                    <div class="header">
-                        <div class="meta"><span class="utc-time" data-ts="2026-02-08 13:30">2026-02-08 13:30</span></div>
-                        <div class="match-info"><div class="teams">AlbinoLeffe <span class="versus">vs</span> Pro Patria</div></div>
-                    </div>
-                    <div class="channels"></div>
-                </div>
-                <div class="card">
-                    <div class="header">
-                        <div class="meta"><span class="utc-time" data-ts="2026-02-08 13:30">2026-02-08 13:30</span></div>
-                        <div class="match-info"><div class="teams">Ospitaletto <span class="versus">vs</span> Renate</div></div>
-                    </div>
-                    <div class="channels"></div>
-                </div>
-                <div class="card">
-                    <div class="header">
-                        <div class="meta"><span class="utc-time" data-ts="2026-02-08 13:30">2026-02-08 13:30</span></div>
-                        <div class="match-info"><div class="teams">Gubbio <span class="versus">vs</span> Campobasso</div></div>
-                    </div>
-                    <div class="channels"></div>
-                </div>
-                <div class="card">
-                    <div class="header">
-                        <div class="meta"><span class="utc-time" data-ts="2026-02-08 13:30">2026-02-08 13:30</span></div>
                         <div class="match-info"><div class="teams">Sambenedettese <span class="versus">vs</span> Perugia</div></div>
                     </div>
                     <div class="channels"><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPXNreStzcG9ydCttYXgmY29kZT1pdCZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/it.png" class="flag-img" onerror="this.style.display='none'"> Sky Sport Max</div></div>
-                </div>
-                <div class="card">
-                    <div class="header">
-                        <div class="meta"><span class="utc-time" data-ts="2026-02-08 13:30">2026-02-08 13:30</span></div>
-                        <div class="match-info"><div class="teams">Triestina <span class="versus">vs</span> Inter II</div></div>
-                    </div>
-                    <div class="channels"></div>
-                </div>
-                <div class="card">
-                    <div class="header">
-                        <div class="meta"><span class="utc-time" data-ts="2026-02-08 13:30">2026-02-08 13:30</span></div>
-                        <div class="match-info"><div class="teams">Wolfsberger AC <span class="versus">vs</span> Grazer AK</div></div>
-                    </div>
-                    <div class="channels"></div>
-                </div>
-                <div class="card">
-                    <div class="header">
-                        <div class="meta"><span class="utc-time" data-ts="2026-02-08 13:30">2026-02-08 13:30</span></div>
-                        <div class="match-info"><div class="teams">Rheindorf Altach <span class="versus">vs</span> Blau-Weiß Linz</div></div>
-                    </div>
-                    <div class="channels"></div>
                 </div>
                 <div class="card">
                     <div class="header">
@@ -491,65 +388,9 @@
                 <div class="card">
                     <div class="header">
                         <div class="meta"><span class="utc-time" data-ts="2026-02-08 13:30">2026-02-08 13:30</span></div>
-                        <div class="match-info"><div class="teams">Willem II <span class="versus">vs</span> RKC Waalwijk</div></div>
-                    </div>
-                    <div class="channels"></div>
-                </div>
-                <div class="card">
-                    <div class="header">
-                        <div class="meta"><span class="utc-time" data-ts="2026-02-08 13:30">2026-02-08 13:30</span></div>
-                        <div class="match-info"><div class="teams">Lecco <span class="versus">vs</span> Pro Vercelli</div></div>
-                    </div>
-                    <div class="channels"></div>
-                </div>
-                <div class="card">
-                    <div class="header">
-                        <div class="meta"><span class="utc-time" data-ts="2026-02-08 13:30">2026-02-08 13:30</span></div>
-                        <div class="match-info"><div class="teams">AlbinoLeffe <span class="versus">vs</span> Pro Patria</div></div>
-                    </div>
-                    <div class="channels"></div>
-                </div>
-                <div class="card">
-                    <div class="header">
-                        <div class="meta"><span class="utc-time" data-ts="2026-02-08 13:30">2026-02-08 13:30</span></div>
-                        <div class="match-info"><div class="teams">Ospitaletto <span class="versus">vs</span> Renate</div></div>
-                    </div>
-                    <div class="channels"></div>
-                </div>
-                <div class="card">
-                    <div class="header">
-                        <div class="meta"><span class="utc-time" data-ts="2026-02-08 13:30">2026-02-08 13:30</span></div>
-                        <div class="match-info"><div class="teams">Gubbio <span class="versus">vs</span> Campobasso</div></div>
-                    </div>
-                    <div class="channels"></div>
-                </div>
-                <div class="card">
-                    <div class="header">
-                        <div class="meta"><span class="utc-time" data-ts="2026-02-08 13:30">2026-02-08 13:30</span></div>
                         <div class="match-info"><div class="teams">Sambenedettese <span class="versus">vs</span> Perugia</div></div>
                     </div>
                     <div class="channels"><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPXNreStzcG9ydCttYXgmY29kZT1pdCZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/it.png" class="flag-img" onerror="this.style.display='none'"> Sky Sport Max</div></div>
-                </div>
-                <div class="card">
-                    <div class="header">
-                        <div class="meta"><span class="utc-time" data-ts="2026-02-08 13:30">2026-02-08 13:30</span></div>
-                        <div class="match-info"><div class="teams">Triestina <span class="versus">vs</span> Inter II</div></div>
-                    </div>
-                    <div class="channels"></div>
-                </div>
-                <div class="card">
-                    <div class="header">
-                        <div class="meta"><span class="utc-time" data-ts="2026-02-08 13:30">2026-02-08 13:30</span></div>
-                        <div class="match-info"><div class="teams">Wolfsberger AC <span class="versus">vs</span> Grazer AK</div></div>
-                    </div>
-                    <div class="channels"></div>
-                </div>
-                <div class="card">
-                    <div class="header">
-                        <div class="meta"><span class="utc-time" data-ts="2026-02-08 13:30">2026-02-08 13:30</span></div>
-                        <div class="match-info"><div class="teams">Rheindorf Altach <span class="versus">vs</span> Blau-Weiß Linz</div></div>
-                    </div>
-                    <div class="channels"></div>
                 </div>
                 <div class="card">
                     <div class="header">
@@ -834,13 +675,6 @@
                 <div class="card">
                     <div class="header">
                         <div class="meta"><span class="utc-time" data-ts="2026-02-08 16:00">2026-02-08 16:00</span></div>
-                        <div class="match-info"><div class="teams">Sporting Cristal <span class="versus">vs</span> Melgar</div></div>
-                    </div>
-                    <div class="channels"></div>
-                </div>
-                <div class="card">
-                    <div class="header">
-                        <div class="meta"><span class="utc-time" data-ts="2026-02-08 16:00">2026-02-08 16:00</span></div>
                         <div class="match-info"><div class="teams">Manisa BBSK <span class="versus">vs</span> Boluspor</div></div>
                     </div>
                     <div class="channels"><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPXRydCtzcG9yJmNvZGU9dHImdXNlcj1jZG5saXZldHYmcGxhbj1mcmVl" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/tr.png" class="flag-img" onerror="this.style.display='none'"> TRT Spor</div></div>
@@ -854,13 +688,6 @@
                 </div>
                 <div class="card">
                     <div class="header">
-                        <div class="meta"><span class="utc-time" data-ts="2026-02-08 16:00">2026-02-08 16:00</span></div>
-                        <div class="match-info"><div class="teams">Sporting Cristal <span class="versus">vs</span> Melgar</div></div>
-                    </div>
-                    <div class="channels"></div>
-                </div>
-                <div class="card">
-                    <div class="header">
                         <div class="meta"><span class="utc-time" data-ts="2026-02-08 16:15">2026-02-08 16:15</span></div>
                         <div class="match-info"><div class="teams">Nyíregyháza Spartacus <span class="versus">vs</span> MTK</div></div>
                     </div>
@@ -939,34 +766,6 @@
                 <div class="card">
                     <div class="header">
                         <div class="meta"><span class="utc-time" data-ts="2026-02-08 16:30">2026-02-08 16:30</span></div>
-                        <div class="match-info"><div class="teams">Vicenza <span class="versus">vs</span> Dolomiti Bellunesi</div></div>
-                    </div>
-                    <div class="channels"></div>
-                </div>
-                <div class="card">
-                    <div class="header">
-                        <div class="meta"><span class="utc-time" data-ts="2026-02-08 16:30">2026-02-08 16:30</span></div>
-                        <div class="match-info"><div class="teams">Arezzo <span class="versus">vs</span> Pianese</div></div>
-                    </div>
-                    <div class="channels"></div>
-                </div>
-                <div class="card">
-                    <div class="header">
-                        <div class="meta"><span class="utc-time" data-ts="2026-02-08 16:30">2026-02-08 16:30</span></div>
-                        <div class="match-info"><div class="teams">Pineto <span class="versus">vs</span> Ascoli</div></div>
-                    </div>
-                    <div class="channels"></div>
-                </div>
-                <div class="card">
-                    <div class="header">
-                        <div class="meta"><span class="utc-time" data-ts="2026-02-08 16:30">2026-02-08 16:30</span></div>
-                        <div class="match-info"><div class="teams">Livorno <span class="versus">vs</span> Bra</div></div>
-                    </div>
-                    <div class="channels"></div>
-                </div>
-                <div class="card">
-                    <div class="header">
-                        <div class="meta"><span class="utc-time" data-ts="2026-02-08 16:30">2026-02-08 16:30</span></div>
                         <div class="match-info"><div class="teams">Bayern München <span class="versus">vs</span> Hoffenheim</div></div>
                     </div>
                     <div class="channels"><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWJlaW4rc3BvcnRzKzEmY29kZT1mciZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/fr.png" class="flag-img" onerror="this.style.display='none'"> beIN SPORTS 1</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWRhem4rMSZjb2RlPWRlJnVzZXI9Y2RubGl2ZXR2JnBsYW49ZnJlZQ==" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/de.png" class="flag-img" onerror="this.style.display='none'"> DAZN 1</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWRhem4rMyZjb2RlPXB0JnVzZXI9Y2RubGl2ZXR2JnBsYW49ZnJlZQ==" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/pt.png" class="flag-img" onerror="this.style.display='none'"> DAZN 3</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPW5vdmErc3BvcnRzKzImY29kZT1nciZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/gr.png" class="flag-img" onerror="this.style.display='none'"> Nova Sports 2</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPXR2MytzcG9ydCZjb2RlPWRrJnVzZXI9Y2RubGl2ZXR2JnBsYW49ZnJlZQ==" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/dk.png" class="flag-img" onerror="this.style.display='none'"> TV3 Sport</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWVsZXZlbitzcG9ydHMrMiZjb2RlPXBsJnVzZXI9Y2RubGl2ZXR2JnBsYW49ZnJlZQ==" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/pl.png" class="flag-img" onerror="this.style.display='none'"> Eleven Sports 2</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWRpZW1hK3Nwb3J0KzMmY29kZT1iZyZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/bg.png" class="flag-img" onerror="this.style.display='none'"> Diema Sport 3</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPXNwb3J0K2tsdWIrMSZjb2RlPXJzJnVzZXI9Y2RubGl2ZXR2JnBsYW49ZnJlZQ==" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/rs.png" class="flag-img" onerror="this.style.display='none'"> Sport Klub 1</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPW5vdmErc3BvcnQrMyZjb2RlPWN6JnVzZXI9Y2RubGl2ZXR2JnBsYW49ZnJlZQ==" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/cz.png" class="flag-img" onerror="this.style.display='none'"> Nova Sport 3</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPXNwb3J0disxJmNvZGU9YnImdXNlcj1jZG5saXZldHYmcGxhbj1mcmVl" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/br.png" class="flag-img" onerror="this.style.display='none'"> SporTV 1</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWRpZ2krc3BvcnQrMyZjb2RlPXJvJnVzZXI9Y2RubGl2ZXR2JnBsYW49ZnJlZQ==" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/ro.png" class="flag-img" onerror="this.style.display='none'"> Digi Sport 3</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPXByaW1hK3Nwb3J0KzQmY29kZT1ybyZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/ro.png" class="flag-img" onerror="this.style.display='none'"> Prima Sport 4</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPXNwb3J0KzMmY29kZT1pbCZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/il.png" class="flag-img" onerror="this.style.display='none'"> Sport 3</div></div>
@@ -984,34 +783,6 @@
                         <div class="match-info"><div class="teams">Liverpool <span class="versus">vs</span> Manchester City</div></div>
                     </div>
                     <div class="channels"><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWRhem4rMSZjb2RlPWVzJnVzZXI9Y2RubGl2ZXR2JnBsYW49ZnJlZQ==" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/es.png" class="flag-img" onerror="this.style.display='none'"> DAZN 1</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPW0rbGlnYStkZStjYW1wZW9uZXMrMSZjb2RlPWVzJnVzZXI9Y2RubGl2ZXR2JnBsYW49ZnJlZQ==" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/es.png" class="flag-img" onerror="this.style.display='none'"> M Liga de Campeones 1</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWFzdHJvK3ByZW1pZXIrbGVhZ3VlJmNvZGU9dXMmdXNlcj1jZG5saXZldHYmcGxhbj1mcmVl" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/us.png" class="flag-img" onerror="this.style.display='none'"> Astro Premier League</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWFzdHJvK2dyYW5kc3RhbmQmY29kZT11cyZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/us.png" class="flag-img" onerror="this.style.display='none'"> Astro Grandstand</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWh1YitwcmVtaWVyKzEmY29kZT1nYiZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/gb.png" class="flag-img" onerror="this.style.display='none'"> Hub Premier 1</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPXNreStzcG9ydHMrbWFpbitldmVudCZjb2RlPWdiJnVzZXI9Y2RubGl2ZXR2JnBsYW49ZnJlZQ==" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/gb.png" class="flag-img" onerror="this.style.display='none'"> Sky Sports Main Event</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPXNreStzcG9ydHMrcHJlbWllcitsZWFndWUmY29kZT1nYiZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/gb.png" class="flag-img" onerror="this.style.display='none'"> Sky Sports Premier League</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPXNreStzcG9ydCs4JmNvZGU9bnomdXNlcj1jZG5saXZldHYmcGxhbj1mcmVl" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/nz.png" class="flag-img" onerror="this.style.display='none'"> Sky Sport 8</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPXN1cGVyc3BvcnQrbWF4aW1vKzEmY29kZT16YSZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/za.png" class="flag-img" onerror="this.style.display='none'"> SuperSport Maximo 1</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPXN1cGVyc3BvcnQrcHJlbWllcitsZWFndWUmY29kZT16YSZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/za.png" class="flag-img" onerror="this.style.display='none'"> SuperSport Premier League</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWNhbmFsK2Zvb3QmY29kZT1mciZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/fr.png" class="flag-img" onerror="this.style.display='none'"> Canal Foot</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWNhbmFsJmNvZGU9ZnImdXNlcj1jZG5saXZldHYmcGxhbj1mcmVl" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/fr.png" class="flag-img" onerror="this.style.display='none'"> Canal</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPXNreStzcG9ydCt1bm8mY29kZT1pdCZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/it.png" class="flag-img" onerror="this.style.display='none'"> Sky Sport Uno</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPXNreStzcG9ydCt0b3ArZXZlbnQmY29kZT1kZSZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/de.png" class="flag-img" onerror="this.style.display='none'"> Sky Sport Top Event</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPXNreStzcG9ydCtidW5kZXNsaWdhKzQmY29kZT1kZSZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/de.png" class="flag-img" onerror="this.style.display='none'"> Sky Sport Bundesliga 4</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWRhem4rMSZjb2RlPXB0JnVzZXI9Y2RubGl2ZXR2JnBsYW49ZnJlZQ==" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/pt.png" class="flag-img" onerror="this.style.display='none'"> DAZN 1</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPW5vdmErc3BvcnRzK3ByZW1pZXIrbGVhZ3VlJmNvZGU9Z3ImdXNlcj1jZG5saXZldHYmcGxhbj1mcmVl" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/gr.png" class="flag-img" onerror="this.style.display='none'"> Nova Sports Premier League</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPXNlZSZjb2RlPWRrJnVzZXI9Y2RubGl2ZXR2JnBsYW49ZnJlZQ==" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/dk.png" class="flag-img" onerror="this.style.display='none'"> See</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWNhbmFsK2V4dHJhKzEmY29kZT1wbCZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/pl.png" class="flag-img" onerror="this.style.display='none'"> Canal Extra 1</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWRpZW1hK3Nwb3J0KzImY29kZT1iZyZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/bg.png" class="flag-img" onerror="this.style.display='none'"> Diema Sport 2</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWN5dGF2aXNpb24rc3BvcnRzKzEmY29kZT1jeSZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/cy.png" class="flag-img" onerror="this.style.display='none'"> Cytavision Sports 1</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWFyZW5hKzErcHJlbWl1bSZjb2RlPXJzJnVzZXI9Y2RubGl2ZXR2JnBsYW49ZnJlZQ==" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/rs.png" class="flag-img" onerror="this.style.display='none'"> Arena 1 Premium</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWFyZW5hK3Nwb3J0KzEmY29kZT1ociZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/hr.png" class="flag-img" onerror="this.style.display='none'"> Arena Sport 1</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWNhbmFsK3Nwb3J0JmNvZGU9Y3omdXNlcj1jZG5saXZldHYmcGxhbj1mcmVl" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/cz.png" class="flag-img" onerror="this.style.display='none'"> Canal Sport</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWVzcG4mY29kZT1iciZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/br.png" class="flag-img" onerror="this.style.display='none'"> ESPN</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWVzcG4mY29kZT1hciZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/ar.png" class="flag-img" onerror="this.style.display='none'"> ESPN</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWJlaW4rc3BvcnRzKzMmY29kZT10ciZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/tr.png" class="flag-img" onerror="this.style.display='none'"> beIN SPORTS 3</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPXNwb3J0KzEmY29kZT1pbCZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/il.png" class="flag-img" onerror="this.style.display='none'"> Sport 1</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWJlaW4rc3BvcnRzKzEmY29kZT1zYSZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/sa.png" class="flag-img" onerror="this.style.display='none'"> beIN SPORTS 1</div></div>
-                </div>
-                <div class="card">
-                    <div class="header">
-                        <div class="meta"><span class="utc-time" data-ts="2026-02-08 16:30">2026-02-08 16:30</span></div>
-                        <div class="match-info"><div class="teams">Vicenza <span class="versus">vs</span> Dolomiti Bellunesi</div></div>
-                    </div>
-                    <div class="channels"></div>
-                </div>
-                <div class="card">
-                    <div class="header">
-                        <div class="meta"><span class="utc-time" data-ts="2026-02-08 16:30">2026-02-08 16:30</span></div>
-                        <div class="match-info"><div class="teams">Arezzo <span class="versus">vs</span> Pianese</div></div>
-                    </div>
-                    <div class="channels"></div>
-                </div>
-                <div class="card">
-                    <div class="header">
-                        <div class="meta"><span class="utc-time" data-ts="2026-02-08 16:30">2026-02-08 16:30</span></div>
-                        <div class="match-info"><div class="teams">Pineto <span class="versus">vs</span> Ascoli</div></div>
-                    </div>
-                    <div class="channels"></div>
-                </div>
-                <div class="card">
-                    <div class="header">
-                        <div class="meta"><span class="utc-time" data-ts="2026-02-08 16:30">2026-02-08 16:30</span></div>
-                        <div class="match-info"><div class="teams">Livorno <span class="versus">vs</span> Bra</div></div>
-                    </div>
-                    <div class="channels"></div>
                 </div>
                 <div class="card">
                     <div class="header">
@@ -1110,20 +881,6 @@
                         <div class="match-info"><div class="teams">Sporting Braga <span class="versus">vs</span> Rio Ave</div></div>
                     </div>
                     <div class="channels"><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWJlaW4rc3BvcnRzK21heCs1JmNvZGU9ZnImdXNlcj1jZG5saXZldHYmcGxhbj1mcmVl" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/fr.png" class="flag-img" onerror="this.style.display='none'"> beIN SPORTS MAX 5</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPXNwb3J0ZGlnaXRhbCtmdXNzYmFsbCZjb2RlPWRlJnVzZXI9Y2RubGl2ZXR2JnBsYW49ZnJlZQ==" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/de.png" class="flag-img" onerror="this.style.display='none'"> SportDigital Fussball</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPXNwb3J0K3R2KzEmY29kZT1wdCZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/pt.png" class="flag-img" onerror="this.style.display='none'"> Sport TV 1</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWNvc21vdGUrc3BvcnQrOSZjb2RlPWdyJnVzZXI9Y2RubGl2ZXR2JnBsYW49ZnJlZQ==" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/gr.png" class="flag-img" onerror="this.style.display='none'"> Cosmote Sport 9</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWVsZXZlbitzcG9ydHMrMyZjb2RlPXBsJnVzZXI9Y2RubGl2ZXR2JnBsYW49ZnJlZQ==" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/pl.png" class="flag-img" onerror="this.style.display='none'"> Eleven Sports 3</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPXJpbmcmY29kZT1iZyZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/bg.png" class="flag-img" onerror="this.style.display='none'"> Ring</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWFyZW5hK3Nwb3J0KzYmY29kZT1ycyZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/rs.png" class="flag-img" onerror="this.style.display='none'"> Arena Sport 6</div></div>
-                </div>
-                <div class="card">
-                    <div class="header">
-                        <div class="meta"><span class="utc-time" data-ts="2026-02-08 18:15">2026-02-08 18:15</span></div>
-                        <div class="match-info"><div class="teams">Los Chankas <span class="versus">vs</span> Alianza Atlético</div></div>
-                    </div>
-                    <div class="channels"></div>
-                </div>
-                <div class="card">
-                    <div class="header">
-                        <div class="meta"><span class="utc-time" data-ts="2026-02-08 18:15">2026-02-08 18:15</span></div>
-                        <div class="match-info"><div class="teams">Los Chankas <span class="versus">vs</span> Alianza Atlético</div></div>
-                    </div>
-                    <div class="channels"></div>
                 </div>
                 <div class="card">
                     <div class="header">
@@ -1261,26 +1018,12 @@
                 <div class="card">
                     <div class="header">
                         <div class="meta"><span class="utc-time" data-ts="2026-02-08 20:30">2026-02-08 20:30</span></div>
-                        <div class="match-info"><div class="teams">Cienciano <span class="versus">vs</span> Juan Pablo II College</div></div>
-                    </div>
-                    <div class="channels"></div>
-                </div>
-                <div class="card">
-                    <div class="header">
-                        <div class="meta"><span class="utc-time" data-ts="2026-02-08 20:30">2026-02-08 20:30</span></div>
                         <div class="match-info"><div class="teams">Benfica <span class="versus">vs</span> Alverca</div></div>
                     </div>
                     <div class="channels"><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWJlaW4rc3BvcnRzKzImY29kZT1mciZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/fr.png" class="flag-img" onerror="this.style.display='none'"> beIN SPORTS 2</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPXNwb3J0ZGlnaXRhbCtmdXNzYmFsbCZjb2RlPWRlJnVzZXI9Y2RubGl2ZXR2JnBsYW49ZnJlZQ==" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/de.png" class="flag-img" onerror="this.style.display='none'"> SportDigital Fussball</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWJlbmZpY2ErdHYmY29kZT1wdCZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/pt.png" class="flag-img" onerror="this.style.display='none'"> Benfica TV</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWNvc21vdGUrc3BvcnQrOSZjb2RlPWdyJnVzZXI9Y2RubGl2ZXR2JnBsYW49ZnJlZQ==" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/gr.png" class="flag-img" onerror="this.style.display='none'"> Cosmote Sport 9</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWVsZXZlbitzcG9ydHMrMyZjb2RlPXBsJnVzZXI9Y2RubGl2ZXR2JnBsYW49ZnJlZQ==" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/pl.png" class="flag-img" onerror="this.style.display='none'"> Eleven Sports 3</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPXJpbmcmY29kZT1iZyZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/bg.png" class="flag-img" onerror="this.style.display='none'"> Ring</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPXNwb3J0K2tsdWIrMiZjb2RlPXJzJnVzZXI9Y2RubGl2ZXR2JnBsYW49ZnJlZQ==" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/rs.png" class="flag-img" onerror="this.style.display='none'"> Sport Klub 2</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWVzcG4rMyZjb2RlPWJyJnVzZXI9Y2RubGl2ZXR2JnBsYW49ZnJlZQ==" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/br.png" class="flag-img" onerror="this.style.display='none'"> ESPN 3</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPXNwb3J0KzQmY29kZT1pbCZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/il.png" class="flag-img" onerror="this.style.display='none'"> Sport 4</div></div>
                 </div>
                 <div class="card">
                     <div class="header">
-                        <div class="meta"><span class="utc-time" data-ts="2026-02-08 20:30">2026-02-08 20:30</span></div>
-                        <div class="match-info"><div class="teams">Cienciano <span class="versus">vs</span> Juan Pablo II College</div></div>
-                    </div>
-                    <div class="channels"></div>
-                </div>
-                <div class="card">
-                    <div class="header">
                         <div class="meta"><span class="utc-time" data-ts="2026-02-08 21:00">2026-02-08 21:00</span></div>
                         <div class="match-info"><div class="teams">Ñublense <span class="versus">vs</span> Deportes Limache</div></div>
                     </div>
@@ -1320,20 +1063,6 @@
                         <div class="match-info"><div class="teams">Huracán <span class="versus">vs</span> San Lorenzo</div></div>
                     </div>
                     <div class="channels"><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWFyZW5hKzIrcHJlbWl1bSZjb2RlPXJzJnVzZXI9Y2RubGl2ZXR2JnBsYW49ZnJlZQ==" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/rs.png" class="flag-img" onerror="this.style.display='none'"> Arena 2 Premium</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWFyZW5hK3Nwb3J0KzImY29kZT1ociZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/hr.png" class="flag-img" onerror="this.style.display='none'"> Arena Sport 2</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPWVzcG4rcHJlbWl1bSZjb2RlPWFyJnVzZXI9Y2RubGl2ZXR2JnBsYW49ZnJlZQ==" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/ar.png" class="flag-img" onerror="this.style.display='none'"> ESPN Premium</div><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPXRudCtzcG9ydHMmY29kZT1hciZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/ar.png" class="flag-img" onerror="this.style.display='none'"> TNT Sports</div></div>
-                </div>
-                <div class="card">
-                    <div class="header">
-                        <div class="meta"><span class="utc-time" data-ts="2026-02-08 23:00">2026-02-08 23:00</span></div>
-                        <div class="match-info"><div class="teams">Alianza Lima <span class="versus">vs</span> Comerciantes Unidos</div></div>
-                    </div>
-                    <div class="channels"></div>
-                </div>
-                <div class="card">
-                    <div class="header">
-                        <div class="meta"><span class="utc-time" data-ts="2026-02-08 23:00">2026-02-08 23:00</span></div>
-                        <div class="match-info"><div class="teams">Alianza Lima <span class="versus">vs</span> Comerciantes Unidos</div></div>
-                    </div>
-                    <div class="channels"></div>
                 </div>
                 <div class="card">
                     <div class="header">
@@ -1406,7 +1135,7 @@
                     <div class="channels"><div class="btn" data-link="aHR0cHM6Ly9jZG4tbGl2ZS50di9hcGkvdjEvY2hhbm5lbHMvcGxheWVyLz9uYW1lPXdpbitmdXRib2wmY29kZT1jbyZ1c2VyPWNkbmxpdmV0diZwbGFuPWZyZWU=" onclick="openLink(this)"><img src="https://flagcdn.com/20x15/co.png" class="flag-img" onerror="this.style.display='none'"> Win Futbol</div></div>
                 </div></div></div></div>
     <div class="footer">
-        Última actualització: <span style="color:var(--text); font-weight:bold;">08/02/2026 13:22 UTC</span><br>
+        Última actualització: <span style="color:var(--text); font-weight:bold;">08/02/2026 13:31 UTC</span><br>
         <small>Hora local detectada automàticament</small>
     </div>
 
