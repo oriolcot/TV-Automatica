@@ -3,7 +3,7 @@ import json
 import os
 import sys
 import base64
-from datetime import datetime
+from datetime import datetime, timedelta
 from difflib import SequenceMatcher
 
 # --- CONFIGURACIÓ ---
@@ -111,50 +111,39 @@ def get_sport_name(key):
     }
     return names.get(key, key.upper())
 
-def normalize_name(name):
-    if not name: return ""
-    # Eliminem paraules comunes que causen duplicats
-    garbage = ["fc", "cf", "ud", "ca", "sc", "basketball", "football", "club", "real", "city", "united"]
-    clean = name.lower()
+def clean_string(text):
+    if not text: return ""
+    # Paraules per eliminar per millorar la comparació
+    garbage = ["fc", "cf", "sc", "ac", "cd", "ud", "ca", "club", "real", "city", "united", "sporting", "athletic", "vs", "-", "."]
+    cleaned = text.lower()
     for g in garbage:
-        clean = clean.replace(f" {g} ", " ").replace(f"{g} ", "").replace(f" {g}", "")
-    return clean.strip()
+        cleaned = cleaned.replace(f" {g} ", " ").replace(f"{g} ", "")
+    return "".join(e for e in cleaned if e.isalnum()) # Només lletres i números
 
-def are_same_match(m1, m2):
+def are_duplicates(m1, m2):
     # 1. Mateix esport?
     if m1.get('custom_sport_cat') != m2.get('custom_sport_cat'): return False
-    
-    # 2. Hora similar? (Marge de 45 minuts)
+
+    # 2. Hora similar? (Marge de 60 minuts)
     try:
         t1 = datetime.strptime(m1['start'], "%Y-%m-%d %H:%M")
         t2 = datetime.strptime(m2['start'], "%Y-%m-%d %H:%M")
-        diff_minutes = abs((t1 - t2).total_seconds()) / 60
-        if diff_minutes > 45: return False
+        diff_hours = abs((t1 - t2).total_seconds()) / 3600
+        if diff_hours > 1.0: return False # Si es porten més d'una hora, no són el mateix
     except: return False
-    
+
     # 3. Noms semblants?
-    h1, a1 = normalize_name(m1.get('homeTeam')), normalize_name(m1.get('awayTeam'))
-    h2, a2 = normalize_name(m2.get('homeTeam')), normalize_name(m2.get('awayTeam'))
+    # Comparem la cadena completa "home+away"
+    s1 = clean_string(m1.get('homeTeam', '') + m1.get('awayTeam', ''))
+    s2 = clean_string(m2.get('homeTeam', '') + m2.get('awayTeam', ''))
     
-    # Comparem la cadena completa "equip1equip2"
-    ratio = SequenceMatcher(None, f"{h1}{a1}", f"{h2}{a2}").ratio()
-    return ratio > 0.65 # Si s'assemblen més d'un 65%, són el mateix
-
-def load_memory():
-    if os.path.exists(MEMORY_FILE):
-        try:
-            with open(MEMORY_FILE, 'r', encoding='utf-8') as f: return json.load(f)
-        except: pass
-    return {}
-
-def save_memory(data):
-    with open(MEMORY_FILE, 'w', encoding='utf-8') as f:
-        json.dump(data, f, indent=4)
+    # Rati de similitud (0 a 1). 0.55 és bastant permissiu per capturar "Man Utd" vs "Manchester United"
+    ratio = SequenceMatcher(None, s1, s2).ratio()
+    return ratio > 0.55
 
 def fetch_cdn_live():
     matches = []
-    if not API_URL_CDN:
-        return matches
+    if not API_URL_CDN: return matches
     try:
         resp = requests.get(API_URL_CDN, headers=HEADERS, timeout=15)
         if resp.status_code == 200:
@@ -168,62 +157,84 @@ def fetch_cdn_live():
     except: pass
     return matches
 
+def load_memory():
+    if os.path.exists(MEMORY_FILE):
+        try:
+            with open(MEMORY_FILE, 'r', encoding='utf-8') as f: return json.load(f)
+        except: pass
+    return {}
+
+def save_memory(data):
+    with open(MEMORY_FILE, 'w', encoding='utf-8') as f:
+        json.dump(data, f, indent=4)
+
 def main():
     try:
         sys.stdout.reconfigure(encoding='utf-8')
 
+        # 1. Recollim TOTS els partits (Memòria + API)
         memory = load_memory()
-        new_matches = fetch_cdn_live()
+        api_matches = fetch_cdn_live()
         
-        # --- FUSIÓ INTEL·LIGENT (NOU) ---
-        for new_m in new_matches:
-            found = False
-            # Mirem si ja tenim aquest partit a la memòria
-            for existing_id, existing_m in memory.items():
-                if are_same_match(existing_m, new_m):
-                    # FUSIONEM: Afegim els canals nous al partit vell
-                    existing_channels = existing_m.get('channels', [])
-                    new_channels = new_m.get('channels', [])
-                    
-                    # Evitem duplicar enllaços exactes
-                    existing_urls = {c['url'] for c in existing_channels if 'url' in c}
-                    for nc in new_channels:
-                        if nc.get('url') not in existing_urls:
-                            existing_channels.append(nc)
-                    
-                    memory[existing_id]['channels'] = existing_channels
-                    found = True
-                    break
+        all_raw_matches = list(memory.values()) + api_matches
+        
+        # 2. SISTEMA DE FUSIÓ I NETEJA
+        unique_matches = {}
+        
+        for match in all_raw_matches:
+            # Ignorem PPV si volem neteja
+            if match.get('provider') == 'PPV': continue
             
-            # Si no l'hem trobat, l'afegim com a nou
-            if not found:
-                slug = f"{new_m.get('custom_sport_cat')}{new_m.get('homeTeam')}{new_m.get('awayTeam')}{new_m.get('start')}"
+            # Busquem si ja tenim un duplicat a la llista de "únics"
+            is_duplicate = False
+            for uid, existing_match in unique_matches.items():
+                if are_duplicates(existing_match, match):
+                    # FUSIÓ DETECTADA!
+                    is_duplicate = True
+                    
+                    # 1. Fusionem canals (sense repetir URL)
+                    existing_urls = {c['url'] for c in existing_match.get('channels', []) if 'url' in c}
+                    for ch in match.get('channels', []):
+                        if ch.get('url') not in existing_urls:
+                            existing_match['channels'].append(ch)
+                    
+                    # 2. Ens quedem amb el nom més llarg/complet
+                    if len(match.get('homeTeam', '')) > len(existing_match.get('homeTeam', '')):
+                        existing_match['homeTeam'] = match['homeTeam']
+                        existing_match['awayTeam'] = match['awayTeam']
+                    
+                    break # Ja l'hem trobat i fusionat
+            
+            if not is_duplicate:
+                # Si no és duplicat, creem un ID nou i l'afegim
+                slug = f"{match.get('custom_sport_cat')}{match.get('homeTeam')}{match.get('awayTeam')}"
                 gid = str(abs(hash(slug)))
-                new_m['gameID'] = gid
-                memory[gid] = new_m
+                match['gameID'] = gid
+                unique_matches[gid] = match
 
-        # --- NETEJA I FILTRATGE ---
+        # 3. FILTRATGE FINAL (Temps i Buits)
         clean_memory = {}
-        now = datetime.utcnow()
         display_matches = []
+        now = datetime.utcnow()
 
-        for gid, m in memory.items():
+        for gid, m in unique_matches.items():
             try:
-                if m.get('provider') == 'PPV': continue
                 s_dt = datetime.strptime(m.get('start'), "%Y-%m-%d %H:%M")
                 diff_hours = (now - s_dt).total_seconds() / 3600
                 
+                # Guardem a memòria si és recent (< 5h)
                 if diff_hours < 5.0:
                     clean_memory[gid] = m
-                    
-                # NOMÉS MOSTREM SI: 1. És futur/recent I 2. TÉ CANALS (Filtre anti-buits)
+                
+                # Mostrem si és futur/recent I TÉ CANALS
                 if diff_hours < 4.0 and len(m.get('channels', [])) > 0:
                     display_matches.append(m)
             except: pass
         
         save_memory(clean_memory)
+        log(f"💾 Memòria optimitzada: {len(clean_memory)} partits únics.")
 
-        # --- GENERACIÓ HTML ---
+        # 4. GENERACIÓ HTML
         events_by_cat = {}
         for m in display_matches:
             cat = m.get('custom_sport_cat', 'Other')
