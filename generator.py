@@ -4,12 +4,13 @@ import os
 import sys
 import base64
 from datetime import datetime
+from difflib import SequenceMatcher
 
 # --- CONFIGURACIÓ ---
 API_URL_CDN = os.environ.get("API_URL")
 MEMORY_FILE = "memoria_partits.json"
 
-# --- PLANTILLA WEB (Fixa't en les marques {{...}}) ---
+# --- PLANTILLA WEB (DISSENY FINAL) ---
 INTERNAL_TEMPLATE = """<!DOCTYPE html>
 <html lang="ca">
 <head>
@@ -21,7 +22,6 @@ INTERNAL_TEMPLATE = """<!DOCTYPE html>
     :root { --bg: #111827; --card: #1f2937; --text: #f3f4f6; --accent: #3b82f6; --live: #ef4444; --border: #374151; }
     body { background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, sans-serif; margin: 0; padding: 20px; padding-bottom: 60px; }
     
-    /* Navbar Estil Netflix */
     .navbar { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 15px; margin-bottom: 30px; scrollbar-width: none; }
     .nav-btn { 
         background: var(--card); color: #9ca3af; padding: 10px 20px; border-radius: 99px; 
@@ -29,15 +29,12 @@ INTERNAL_TEMPLATE = """<!DOCTYPE html>
     }
     .nav-btn:hover, .nav-btn.active { background: var(--accent); color: white; border-color: var(--accent); transform: translateY(-2px); }
     
-    /* Títols */
     .sport-section { margin-bottom: 40px; animation: fadeIn 0.5s ease-in; }
     .sport-title { font-size: 1.8rem; font-weight: 800; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; color: white; }
     .sport-icon { background: var(--accent); width: 4px; height: 24px; border-radius: 2px; display: inline-block; }
     
-    /* Graella */
     .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; }
     
-    /* Targeta */
     .card { 
         background: var(--card); border-radius: 16px; overflow: hidden; border: 1px solid var(--border); 
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3); transition: transform 0.2s; display: flex; flex-direction: column;
@@ -54,7 +51,6 @@ INTERNAL_TEMPLATE = """<!DOCTYPE html>
     .teams { font-size: 1.1rem; font-weight: 700; line-height: 1.4; color: white; }
     .versus { color: #6b7280; font-size: 0.9rem; margin: 0 8px; font-weight: 400; }
 
-    /* Canals */
     .channels { padding: 16px; display: flex; flex-wrap: wrap; gap: 10px; background: #1a222e; flex-grow: 1; align-content: flex-start; }
     .btn { 
         background: #374151; color: #e5e7eb; padding: 8px 14px; border-radius: 8px; 
@@ -62,7 +58,7 @@ INTERNAL_TEMPLATE = """<!DOCTYPE html>
         transition: all 0.2s; user-select: none; border: 1px solid transparent; text-decoration: none; width: 100%; justify-content: flex-start;
     }
     .btn:hover { background: var(--accent); color: white; border-color: #93c5fd; }
-    .flag-img { width: 20px; height: 15px; object-fit: cover; border-radius: 3px; }
+    .flag-img { width: 20px; height: 15px; object-fit: cover; border-radius: 3px; box-shadow: 0 1px 2px rgba(0,0,0,0.3); }
 
     .footer { text-align: center; margin-top: 60px; color: #6b7280; font-size: 0.9rem; border-top: 1px solid var(--border); padding-top: 30px; }
     
@@ -115,6 +111,35 @@ def get_sport_name(key):
     }
     return names.get(key, key.upper())
 
+def normalize_name(name):
+    if not name: return ""
+    # Eliminem paraules comunes que causen duplicats
+    garbage = ["fc", "cf", "ud", "ca", "sc", "basketball", "football", "club", "real", "city", "united"]
+    clean = name.lower()
+    for g in garbage:
+        clean = clean.replace(f" {g} ", " ").replace(f"{g} ", "").replace(f" {g}", "")
+    return clean.strip()
+
+def are_same_match(m1, m2):
+    # 1. Mateix esport?
+    if m1.get('custom_sport_cat') != m2.get('custom_sport_cat'): return False
+    
+    # 2. Hora similar? (Marge de 45 minuts)
+    try:
+        t1 = datetime.strptime(m1['start'], "%Y-%m-%d %H:%M")
+        t2 = datetime.strptime(m2['start'], "%Y-%m-%d %H:%M")
+        diff_minutes = abs((t1 - t2).total_seconds()) / 60
+        if diff_minutes > 45: return False
+    except: return False
+    
+    # 3. Noms semblants?
+    h1, a1 = normalize_name(m1.get('homeTeam')), normalize_name(m1.get('awayTeam'))
+    h2, a2 = normalize_name(m2.get('homeTeam')), normalize_name(m2.get('awayTeam'))
+    
+    # Comparem la cadena completa "equip1equip2"
+    ratio = SequenceMatcher(None, f"{h1}{a1}", f"{h2}{a2}").ratio()
+    return ratio > 0.65 # Si s'assemblen més d'un 65%, són el mateix
+
 def load_memory():
     if os.path.exists(MEMORY_FILE):
         try:
@@ -129,10 +154,8 @@ def save_memory(data):
 def fetch_cdn_live():
     matches = []
     if not API_URL_CDN:
-        log("⚠️ API_URL no configurada.")
         return matches
     try:
-        log(f"Connectant a API...")
         resp = requests.get(API_URL_CDN, headers=HEADERS, timeout=15)
         if resp.status_code == 200:
             data = resp.json().get("cdn-live-tv", {})
@@ -142,11 +165,7 @@ def fetch_cdn_live():
                         m['custom_sport_cat'] = sport
                         m['provider'] = 'CDN'
                         matches.append(m)
-            log(f"✅ API: {len(matches)} partits trobats.")
-        else:
-            log(f"❌ API Error: {resp.status_code}")
-    except Exception as e:
-        log(f"❌ API Exception: {e}")
+    except: pass
     return matches
 
 def main():
@@ -156,12 +175,34 @@ def main():
         memory = load_memory()
         new_matches = fetch_cdn_live()
         
-        for m in new_matches:
-            slug = f"{m.get('custom_sport_cat')}{m.get('homeTeam')}{m.get('awayTeam')}{m.get('start')}"
-            gid = str(abs(hash(slug)))
-            m['gameID'] = gid
-            memory[gid] = m 
+        # --- FUSIÓ INTEL·LIGENT (NOU) ---
+        for new_m in new_matches:
+            found = False
+            # Mirem si ja tenim aquest partit a la memòria
+            for existing_id, existing_m in memory.items():
+                if are_same_match(existing_m, new_m):
+                    # FUSIONEM: Afegim els canals nous al partit vell
+                    existing_channels = existing_m.get('channels', [])
+                    new_channels = new_m.get('channels', [])
+                    
+                    # Evitem duplicar enllaços exactes
+                    existing_urls = {c['url'] for c in existing_channels if 'url' in c}
+                    for nc in new_channels:
+                        if nc.get('url') not in existing_urls:
+                            existing_channels.append(nc)
+                    
+                    memory[existing_id]['channels'] = existing_channels
+                    found = True
+                    break
+            
+            # Si no l'hem trobat, l'afegim com a nou
+            if not found:
+                slug = f"{new_m.get('custom_sport_cat')}{new_m.get('homeTeam')}{new_m.get('awayTeam')}{new_m.get('start')}"
+                gid = str(abs(hash(slug)))
+                new_m['gameID'] = gid
+                memory[gid] = new_m
 
+        # --- NETEJA I FILTRATGE ---
         clean_memory = {}
         now = datetime.utcnow()
         display_matches = []
@@ -171,15 +212,18 @@ def main():
                 if m.get('provider') == 'PPV': continue
                 s_dt = datetime.strptime(m.get('start'), "%Y-%m-%d %H:%M")
                 diff_hours = (now - s_dt).total_seconds() / 3600
+                
                 if diff_hours < 5.0:
                     clean_memory[gid] = m
-                if diff_hours < 4.0:
+                    
+                # NOMÉS MOSTREM SI: 1. És futur/recent I 2. TÉ CANALS (Filtre anti-buits)
+                if diff_hours < 4.0 and len(m.get('channels', [])) > 0:
                     display_matches.append(m)
             except: pass
         
         save_memory(clean_memory)
-        log(f"💾 Memòria actualitzada: {len(clean_memory)} partits guardats.")
 
+        # --- GENERACIÓ HTML ---
         events_by_cat = {}
         for m in display_matches:
             cat = m.get('custom_sport_cat', 'Other')
@@ -190,11 +234,11 @@ def main():
 
         navbar_html = ""
         content_html = ""
-
-        if not events_by_cat:
-            content_html = "<div style='text-align:center; padding:80px; color:#6b7280;'><h2>😴 No s'han trobat partits.</h2></div>"
-
         sorted_cats = sorted(events_by_cat.keys())
+        
+        if not events_by_cat:
+            content_html = "<div style='text-align:center; padding:80px; color:#6b7280;'><h2>😴 No hi ha partits disponibles.</h2></div>"
+
         navbar_html += f'<a href="#" class="nav-btn active">Inici</a>'
 
         for sport in sorted_cats:
@@ -230,8 +274,6 @@ def main():
                 </div>"""
             content_html += "</div></div>"
 
-        # --- AQUESTA ÉS LA CORRECCIÓ CLAU ---
-        # Ara fem servir les claus {{...}} que NO s'esborren
         final = INTERNAL_TEMPLATE.replace('{{NAVBAR}}', navbar_html)
         final = final.replace('{{CONTENT}}', content_html)
         final = final.replace('{{DATE}}', datetime.now().strftime("%d/%m/%Y %H:%M UTC"))
